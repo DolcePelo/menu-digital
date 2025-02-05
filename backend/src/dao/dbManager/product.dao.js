@@ -1,4 +1,4 @@
-import productModel from '../models/product.js';
+import productModel from '../models/product.model.js';
 import logger from '../../config/logger.js';
 
 export default class Product {

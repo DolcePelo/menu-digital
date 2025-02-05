@@ -1,4 +1,4 @@
-import categoryModel from '../models/category.js';
+import categoryModel from '../models/category.model.js';
 import logger from '../../config/logger.js';
 
 export default class Category {

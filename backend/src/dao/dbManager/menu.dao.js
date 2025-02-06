@@ -1,4 +1,5 @@
 import menuModel from '../models/menu.model.js';
+import categoryModel from '../models/category.models.js';
 import logger from '../../config/logger.js';
 
 export default class Menu {
@@ -11,7 +12,7 @@ export default class Menu {
             const menu = await menuModel.find();
             return menu;
         } catch (error) {
-            logger("error al obtener los menues", error)
+            logger.error("error al obtener los menues", error)
         }
     }
 
@@ -20,7 +21,7 @@ export default class Menu {
             const menu = await menuModel.findById(id);
             return menu;
         } catch (error) {
-            logger("error al obtener el menu por id", error);
+            logger.error("error al obtener el menu por id", error);
         }
     }
 
@@ -30,7 +31,7 @@ export default class Menu {
             let result = await newMenu.save();
             return result;
         } catch (error) {
-            logger("error al crear el menu", error);
+            logger.error("error al crear el menu", error);
         }
     }
 
@@ -39,7 +40,7 @@ export default class Menu {
             let menu = await menuModel.findByIdAndDelete(id);
             return menu;
         } catch (error) {
-            logger("error al eliminar el menu", error);
+            logger.error("error al eliminar el menu", error);
         }
     }
 
@@ -48,7 +49,25 @@ export default class Menu {
             let menuUpdated = await menuModel.findByIdAndUpdate(id, menu, { new: true });
             return menuUpdated;
         } catch (error) {
-            logger("error al actualizar el menu", error);
+            logger.error("error al actualizar el menu", error);
+        }
+    }
+
+    addCategoryToMenu = async (menuId, categoryId) => {
+        try {
+            let menu = await menuModel.findById(menuId);
+            if (!menu) {
+                throw new Error("Menu not found");
+            }
+            let category = await categoryModel.findById(categoryId);
+            if (!category) {
+                throw new Error("Category not found");
+            }
+            menu.categories.push(categoryId);
+            let result = await menu.save();
+            return result;
+        } catch (error) {
+            logger.error("error al agregar la categoria al menu", error);
         }
     }
 }

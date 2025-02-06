@@ -6,7 +6,7 @@ const MenuSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
     name: { type: String, required: true },
     description: { type: String, required: true },
-    categories: [{ type: mongoose.Schema.Types.ObjectId, ref: "category"}],
+    categories: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category"}],
 });
 
 const Menu = mongoose.model(menuCollection, MenuSchema);

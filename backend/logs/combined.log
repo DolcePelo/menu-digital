@@ -1,0 +1,23 @@
+[2025-02-06T02:04:42.876Z] [31merror[39m: error al obtener el menu menu.getMenu is not a function
+[2025-02-06T02:05:45.699Z] [32minfo[39m: GET /api/products 200 67ms
+[2025-02-06T02:06:03.510Z] [32minfo[39m: GET /api/categories 200 55ms
+[2025-02-06T02:06:10.634Z] [32minfo[39m: GET /api/users 200 59ms
+[2025-02-06T02:06:17.754Z] [31merror[39m: error al obtener el menu menu.getMenu is not a function
+[2025-02-06T02:07:42.077Z] [32minfo[39m: GET /api/menus 200 695ms
+[2025-02-06T02:10:13.514Z] [32minfo[39m: GET /api/menus 200 55ms
+[2025-02-06T03:26:11.647Z] [32minfo[39m: GET /api/menus 200 81ms
+[2025-02-06T03:30:01.329Z] [32minfo[39m: POST /api/users 200 77ms
+[2025-02-06T03:33:55.211Z] [31merror[39m: error al crear el menu menu validation failed: user: Path `user` is required.
+[2025-02-06T03:33:55.231Z] [32minfo[39m: POST /api/menus 200 33ms
+[2025-02-06T03:35:53.798Z] [31merror[39m: error al crear el menu menu validation failed: user: Path `user` is required.
+[2025-02-06T03:35:53.801Z] [32minfo[39m: POST /api/menus 200 3ms
+[2025-02-06T03:41:21.967Z] [32minfo[39m: POST /api/menus 200 73ms
+[2025-02-06T03:42:18.181Z] [32minfo[39m: POST /api/categories 200 67ms
+[2025-02-06T03:47:48.144Z] [32minfo[39m: POST /api/products 200 81ms
+[2025-02-06T03:48:13.534Z] [32minfo[39m: GET /api/products 200 68ms
+[2025-02-06T03:48:22.677Z] [32minfo[39m: GET /api/categories 200 145ms
+[2025-02-06T03:48:33.203Z] [32minfo[39m: GET /api/menu 404 1ms
+[2025-02-06T03:48:36.895Z] [32minfo[39m: GET /api/menus 200 64ms
+[2025-02-06T03:54:20.788Z] [32minfo[39m: PUT /api/67a42f614d07ac682901f4c8/category/67a42f9a4d07ac682901f4ca 404 2ms
+[2025-02-06T03:54:52.915Z] [32minfo[39m: PUT /api/67a42f614d07ac682901f4c8/category/67a42f9a4d07ac682901f4ca 404 1ms
+[2025-02-06T03:55:14.069Z] [32minfo[39m: PUT /api/menus/67a42f614d07ac682901f4c8/category/67a42f9a4d07ac682901f4ca 200 202ms

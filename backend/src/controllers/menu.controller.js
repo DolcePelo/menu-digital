@@ -3,9 +3,9 @@ import logger from '../config/logger.js';
 
 const menu = new menuService();
 
-const getMenu = async (req, res) => {
+const getMenus = async (req, res) => {
     try {
-        const menuList = await menu.getMenu();
+        const menuList = await menu.getMenus();
         res.json({
             status: 200,
             message: "Menu List fetched successfully",
@@ -31,9 +31,9 @@ const getMenuById = async (req, res) => {
 }
 
 const saveMenu = async (req, res) => {
-    const { name, description, price, categoryId } = req.body;
+    const { user, name, description, categoryId } = req.body;
     try {
-        const response = await menu.saveMenu({ name, description, price, categoryId });
+        const response = await menu.saveMenu({ user, name, description, categoryId });
         res.json({
             status: 200,
             message: "Menu saved successfully",
@@ -73,10 +73,29 @@ const updateMenu = async (req, res) => {
     }
 }
 
+const addCategoryToMenu = async (req, res) => {
+    try {
+        const { menuId, categoryId } = req.params;
+        const response = await menu.addCategoryToMenu(menuId, categoryId);
+
+        if (!response) {
+            return res.status(404).json({ status: 404, message: "Category not found" });
+        }
+        res.json({
+            status: 200,
+            message: "Category added to menu successfully",
+            data: response
+        });
+    } catch (error) {
+        logger.error("error al agregar la categoria al menu", error);
+    }
+}
+
 export {
-    getMenu,
+    getMenus,
     getMenuById,
     saveMenu,
     deleteMenu,
-    updateMenu
+    updateMenu,
+    addCategoryToMenu
 }

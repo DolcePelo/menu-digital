@@ -3,9 +3,9 @@ import logger from '../config/logger.js';
 
 const product = new productService();
 
-const getProduct = async (req, res) => {
+const getProducts = async (req, res) => {
     try {
-        const productList = await product.getProduct();
+        const productList = await product.getProducts();
         res.json({
             status: 200,
             message: "Product List fetched successfully",
@@ -31,9 +31,9 @@ const getProductById = async (req, res) => {
 }
 
 const saveProduct = async (req, res) => {
-    const { name, price, categoryId } = req.body;
+    const { name, description, price, category, menu } = req.body;
     try {
-        const response = await product.saveProduct({ name, price, categoryId });
+        const response = await product.saveProduct({ name, description, price, category, menu });
         res.json({
             status: 200,
             message: "Product saved successfully",
@@ -73,8 +73,8 @@ const updateProduct = async (req, res) => {
     }
 }
 
-export default {
-    getProduct,
+export {
+    getProducts,
     getProductById,
     saveProduct,
     deleteProduct,

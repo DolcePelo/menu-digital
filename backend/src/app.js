@@ -1,5 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
+import categoryRouter from "./routes/category.routes.js";
+import productRouter from "./routes/product.routes.js";
+import userRouter from "./routes/user.routes.js";
+import menuRouter from "./routes/menu.routes.js";
 import MongoStore from "connect-mongo";
 import session from "express-session";
 import cookieParser from "cookie-parser";
@@ -47,6 +51,10 @@ app.use(
 );
 
 //Routes
+app.use("/api/categories", categoryRouter);
+app.use("/api/products", productRouter);
+app.use("/api/users", userRouter);
+app.use("/api/menus", menuRouter);
 
 const server = app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

@@ -74,7 +74,7 @@ const updateUser = async (req, res) => {
 }
 
 export {
-    getUser,
+    getUsers,
     getUserById,
     saveUser,
     deleteUser,

@@ -7,6 +7,9 @@ import menuRouter from "./routes/menu.routes.js";
 import MongoStore from "connect-mongo";
 import session from "express-session";
 import cookieParser from "cookie-parser";
+import passport from "passport";
+import initializePassport from "./config/passport.config.js";
+import sessionRouter from "./routes/sessions.routes.js";
 import { __dirname } from "./utils.js";
 import logger from "./config/logger.js";
 import expressWinston from "express-winston";
@@ -50,11 +53,17 @@ app.use(
     })
 );
 
+//inicialización de passport
+initializePassport();
+app.use(passport.initialize());
+app.use(passport.session());
+
 //Routes
 app.use("/api/categories", categoryRouter);
 app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/menus", menuRouter);
+app.use("/api/session", sessionRouter);
 
 const server = app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

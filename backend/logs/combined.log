@@ -21,3 +21,7 @@
 [2025-02-06T03:54:20.788Z] [32minfo[39m: PUT /api/67a42f614d07ac682901f4c8/category/67a42f9a4d07ac682901f4ca 404 2ms
 [2025-02-06T03:54:52.915Z] [32minfo[39m: PUT /api/67a42f614d07ac682901f4c8/category/67a42f9a4d07ac682901f4ca 404 1ms
 [2025-02-06T03:55:14.069Z] [32minfo[39m: PUT /api/menus/67a42f614d07ac682901f4c8/category/67a42f9a4d07ac682901f4ca 200 202ms
+[2025-02-14T11:07:08.175Z] [32minfo[39m: POST /api/session/signup 200 1688ms
+[2025-02-14T11:10:06.736Z] [32minfo[39m: GET /api/users 200 256ms
+[2025-02-14T11:11:52.496Z] [32minfo[39m: GET /api/users 200 1960ms
+[2025-02-14T23:02:11.707Z] [32minfo[39m: POST /api/users 200 99ms

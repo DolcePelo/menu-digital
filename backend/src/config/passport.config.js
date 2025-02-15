@@ -24,7 +24,7 @@ const initializePassport = () => {
                 usernameField: "email",
             },
             async (req, username, password, done) => {
-                const { email, name } = req.body;
+                const { email, name, role } = req.body;
                 try {
                     console.log(username);
                     
@@ -39,6 +39,7 @@ const initializePassport = () => {
                         email,
                         password: createHash(password),
                         name,
+                        role,
                     };
 
                     console.log("newUser", newUser);

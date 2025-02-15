@@ -31,9 +31,9 @@ const getUserById = async (req, res) => {
 }
 
 const saveUser = async (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
     try {
-        const response = await user.saveUser({ name, email, password });
+        const response = await user.saveUser({ name, email, password, role });
         res.json({
             status: 200,
             message: "User saved successfully",
@@ -60,9 +60,9 @@ const deleteUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
     const { id } = req.params;
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
     try {
-        const response = await user.updateUser(id, { name, email, password });
+        const response = await user.updateUser(id, { name, email, password, role });
         res.json({
             status: 200,
             message: "User updated successfully",

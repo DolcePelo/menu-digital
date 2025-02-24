@@ -2,3 +2,5 @@
 [2025-02-06T02:06:17.754Z] [31merror[39m: error al obtener el menu menu.getMenu is not a function
 [2025-02-06T03:33:55.211Z] [31merror[39m: error al crear el menu menu validation failed: user: Path `user` is required.
 [2025-02-06T03:35:53.798Z] [31merror[39m: error al crear el menu menu validation failed: user: Path `user` is required.
+[2025-02-24T04:12:45.415Z] [31merror[39m: error al crear el menu menu validation failed: user: Path `user` is required.
+[2025-02-24T04:13:05.051Z] [31merror[39m: error al crear el menu menu validation failed: user: Path `user` is required.

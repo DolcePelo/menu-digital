@@ -1,42 +1,160 @@
+/* Nuevos Colores */
+:root {
+  --primary-bg: #f4f6f9;  /* Fondo gris claro */
+  --secondary-bg: #ffffff; /* Fondo blanco */
+  --accent-color: #2980b9; /* Azul suave */
+  --text-color: #2c3e50; /* Gris oscuro */
+  --button-bg: #3498db; /* Fondo de botones azul claro */
+  --button-hover-bg: #1abc9c; /* Hover botones verde menta */
+  --header-bg: #3498db; /* Fondo del header azul claro */
+  --sidebar-bg: #2c3e50; /* Fondo oscuro del sidebar */
+  --sidebar-hover-bg: #1abc9c; /* Hover del sidebar verde menta */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Contenedor principal */
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Navbar */
+header {
+  background-color: var(--header-bg);
+  padding: 0.8rem 1.5rem;
+  /* Se eliminan los bordes redondeados */
+  box-shadow: 0 2px 5px var(--shadow-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  height: 100vh;
+  padding: 1rem;
+  /* Se eliminan los bordes redondeados */
+  box-shadow: 2px 0 5px var(--shadow-color);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 1.5rem;  /* Distancia entre los enlaces */
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;  /* Aumento el tamaño de los enlaces */
+  transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: var(--sidebar-hover-bg);
+  color: white;
+}
+
+/* Main content area */
+main {
+  flex-grow: 1;
+  padding: 1rem;
+  background-color: var(--secondary-bg);
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+/* Botones */
+button {
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Se eliminan los bordes redondeados */
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent-color);
+}
+
+/* Utilidades */
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.text-center {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.text-xl {
+  font-size: 1.25rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.font-bold {
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

@@ -1,0 +1,30 @@
+/* Navbar */
+header {
+    background-color: var(--header-bg);
+    padding: 0.8rem 1.5rem;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+header .flex {
+    gap: 1.5rem;
+    /* Aumentamos la distancia entre los íconos */
+}
+
+button {
+    padding: 0.6rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}

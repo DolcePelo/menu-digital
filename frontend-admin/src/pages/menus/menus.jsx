@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getMenus, saveMenu, deleteMenu, updateMenu } from "../../api/menuApi.js";
 import MenuForm from "../../components/menuForm/MenuForm.jsx";
-import MenuList from "../../components/menuList/MenuList.jsx";
+import MenuList from "../../components/menuList/menuList.jsx";
 
 const Menus = () => {
     const [menus, setMenus] = useState([]);

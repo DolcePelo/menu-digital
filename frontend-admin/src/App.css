@@ -107,7 +107,7 @@ button {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  /* Se eliminan los bordes redondeados */
+  margin: 0.2rem 0.5rem;
 }
 
 button:hover {

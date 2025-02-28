@@ -40,7 +40,6 @@ const CategoryForm = ({ onSave, selectedCategory }) => {
                 onChange={handleChange}
                 placeholder="Descripción"
                 className="border p-2 mr-2"
-                required
             />
             <button type="submit" className="bg-blue-500 text-white p-2">
                 {selectedCategory ? "Actualizar" : "Agregar"}

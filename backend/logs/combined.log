@@ -70,3 +70,222 @@
 [2025-02-24T04:50:14.818Z] [32minfo[39m: GET /api/menus 304 510ms
 [2025-02-24T04:56:11.446Z] [32minfo[39m: GET /api/menus 304 577ms
 [2025-02-24T04:56:11.709Z] [32minfo[39m: GET /api/menus 304 262ms
+[2025-02-26T01:16:18.042Z] [32minfo[39m: GET /ws 404 3ms
+[2025-02-26T01:16:51.036Z] [32minfo[39m: GET /ws 404 1ms
+[2025-02-26T01:17:09.652Z] [32minfo[39m: GET /api/menus 304 79ms
+[2025-02-26T01:17:09.711Z] [32minfo[39m: GET /api/menus 304 56ms
+[2025-02-26T01:17:56.027Z] [32minfo[39m: GET /ws 404 1ms
+[2025-02-26T01:18:36.409Z] [32minfo[39m: GET /api/menus 304 53ms
+[2025-02-26T01:18:36.464Z] [32minfo[39m: GET /api/menus 304 52ms
+[2025-02-26T01:20:05.019Z] [32minfo[39m: GET /ws 404 1ms
+[2025-02-26T01:24:22.020Z] [32minfo[39m: GET /ws 404 1ms
+[2025-02-26T01:29:19.483Z] [32minfo[39m: GET /api/categories 200 74ms
+[2025-02-26T01:29:19.541Z] [32minfo[39m: GET /api/categories 304 54ms
+[2025-02-26T01:29:20.386Z] [32minfo[39m: GET /api/menus 304 61ms
+[2025-02-26T01:29:20.445Z] [32minfo[39m: GET /api/menus 304 55ms
+[2025-02-26T01:29:21.042Z] [32minfo[39m: GET /api/categories 304 57ms
+[2025-02-26T01:29:21.099Z] [32minfo[39m: GET /api/categories 304 54ms
+[2025-02-26T01:29:21.415Z] [32minfo[39m: GET /api/menus 304 56ms
+[2025-02-26T01:29:21.470Z] [32minfo[39m: GET /api/menus 304 54ms
+[2025-02-26T01:32:55.026Z] [32minfo[39m: GET /ws 404 1ms
+[2025-02-26T20:53:44.621Z] [32minfo[39m: GET /api/menus 304 520ms
+[2025-02-26T20:53:44.698Z] [32minfo[39m: GET /api/menus 304 61ms
+[2025-02-27T11:40:15.294Z] [32minfo[39m: GET /api/menus 304 218ms
+[2025-02-27T11:40:15.482Z] [32minfo[39m: GET /api/menus 304 181ms
+[2025-02-27T11:41:07.993Z] [32minfo[39m: GET /api/categories 304 117ms
+[2025-02-27T11:41:08.110Z] [32minfo[39m: GET /api/categories 304 112ms
+[2025-02-27T11:42:38.529Z] [32minfo[39m: POST /api/categories 200 141ms
+[2025-02-27T11:47:44.511Z] [32minfo[39m: GET /api/categories 200 204ms
+[2025-02-27T11:47:44.696Z] [32minfo[39m: GET /api/categories 304 177ms
+[2025-02-27T11:48:14.595Z] [32minfo[39m: POST /api/categories 200 192ms
+[2025-02-27T11:48:14.715Z] [32minfo[39m: GET /api/categories 200 112ms
+[2025-02-27T11:48:19.717Z] [32minfo[39m: DELETE /api/categories/67c050feb71111da766bf18c 200 179ms
+[2025-02-27T11:48:19.823Z] [32minfo[39m: GET /api/categories 200 97ms
+[2025-02-27T11:48:41.322Z] [32minfo[39m: PUT /api/categories/67a42f9a4d07ac682901f4ca 200 100ms
+[2025-02-27T11:48:41.423Z] [32minfo[39m: GET /api/categories 200 94ms
+[2025-02-27T11:59:07.587Z] [32minfo[39m: GET /api/categories 304 149ms
+[2025-02-27T11:59:07.997Z] [32minfo[39m: GET /api/categories 304 402ms
+[2025-02-27T12:00:22.761Z] [32minfo[39m: POST /api/categories 200 196ms
+[2025-02-27T12:00:22.962Z] [32minfo[39m: GET /api/categories 200 193ms
+[2025-02-27T12:00:24.688Z] [32minfo[39m: DELETE /api/categories/67c053d6b71111da766bf195 200 198ms
+[2025-02-27T12:00:24.736Z] [32minfo[39m: GET /api/categories 200 41ms
+[2025-02-27T12:01:57.756Z] [32minfo[39m: GET /api/menus 304 537ms
+[2025-02-27T12:01:57.908Z] [32minfo[39m: GET /api/menus 304 147ms
+[2025-02-27T12:01:58.328Z] [32minfo[39m: GET /api/categories 304 432ms
+[2025-02-27T12:01:58.500Z] [32minfo[39m: GET /api/categories 304 169ms
+[2025-02-27T12:01:59.005Z] [32minfo[39m: GET /api/menus 304 87ms
+[2025-02-27T12:01:59.726Z] [32minfo[39m: GET /api/menus 304 715ms
+[2025-02-27T12:02:00.335Z] [32minfo[39m: GET /api/categories 304 137ms
+[2025-02-27T12:02:00.544Z] [32minfo[39m: GET /api/categories 304 206ms
+[2025-02-27T12:02:02.913Z] [32minfo[39m: GET /api/menus 304 265ms
+[2025-02-27T12:02:05.176Z] [32minfo[39m: GET /api/menus 304 2259ms
+[2025-02-27T12:02:05.666Z] [32minfo[39m: GET /api/categories 304 1457ms
+[2025-02-27T12:02:06.165Z] [32minfo[39m: GET /api/categories 304 495ms
+[2025-02-27T12:02:08.636Z] [32minfo[39m: GET /api/menus 304 433ms
+[2025-02-27T12:02:08.839Z] [32minfo[39m: GET /api/menus 304 199ms
+[2025-02-27T12:02:12.622Z] [32minfo[39m: GET /api/categories 304 156ms
+[2025-02-27T12:02:12.722Z] [32minfo[39m: GET /api/categories 304 94ms
+[2025-02-27T14:34:39.282Z] [32minfo[39m: GET /api/categories 304 419ms
+[2025-02-27T14:34:47.769Z] [32minfo[39m: GET /api/products 200 44ms
+[2025-02-27T14:34:47.812Z] [32minfo[39m: GET /api/products 304 40ms
+[2025-02-27T14:35:32.899Z] [31merror[39m: error al guardar el producto logger is not a function
+[2025-02-27T14:35:40.987Z] [32minfo[39m: GET /api/categories 304 197ms
+[2025-02-27T14:35:41.166Z] [32minfo[39m: GET /api/categories 304 173ms
+[2025-02-27T14:35:41.220Z] [32minfo[39m: GET /api/products 304 687ms
+[2025-02-27T14:35:41.261Z] [32minfo[39m: GET /api/products 304 39ms
+[2025-02-27T14:35:41.302Z] [32minfo[39m: GET /api/products 304 39ms
+[2025-02-27T14:35:48.071Z] [31merror[39m: error al guardar el producto logger is not a function
+[2025-02-27T14:40:47.800Z] [32minfo[39m: GET /api/products 304 43ms
+[2025-02-27T14:40:47.842Z] [32minfo[39m: GET /api/products 304 39ms
+[2025-02-27T14:42:29.001Z] [31merror[39m: error al guardar el producto logger is not a function
+[2025-02-27T14:42:38.214Z] [31merror[39m: error al guardar el producto logger is not a function
+[2025-02-27T14:42:42.373Z] [32minfo[39m: GET /api/products 304 39ms
+[2025-02-27T14:42:42.420Z] [32minfo[39m: GET /api/products 304 41ms
+[2025-02-27T14:47:15.878Z] [31merror[39m: error al guardar el producto logger is not a function
+[2025-02-27T14:47:52.073Z] [31merror[39m: error al guardar el producto logger is not a function
+[2025-02-27T14:48:58.319Z] [32minfo[39m: GET /api/menus 304 50ms
+[2025-02-27T14:48:58.366Z] [32minfo[39m: GET /api/menus 304 45ms
+[2025-02-27T14:48:59.125Z] [32minfo[39m: GET /api/categories 304 41ms
+[2025-02-27T14:48:59.176Z] [32minfo[39m: GET /api/categories 304 48ms
+[2025-02-27T14:49:00.230Z] [32minfo[39m: GET /api/products 304 41ms
+[2025-02-27T14:49:00.269Z] [32minfo[39m: GET /api/products 304 36ms
+[2025-02-27T14:49:04.925Z] [31merror[39m: error al guardar el producto logger is not a function
+[2025-02-27T14:49:28.603Z] [31merror[39m: error al guardar el producto logger is not a function
+[2025-02-27T14:50:50.640Z] [32minfo[39m: GET /api/products 304 47ms
+[2025-02-27T14:50:50.683Z] [32minfo[39m: GET /api/products 304 38ms
+[2025-02-27T14:51:02.932Z] [31merror[39m: error al guardar el producto logger is not a function
+[2025-02-27T14:55:58.456Z] [31merror[39m: error al guardar el producto logger is not a function
+[2025-02-27T14:56:10.636Z] [31merror[39m: error al guardar el producto logger is not a function
+[2025-02-27T14:58:36.742Z] [31merror[39m: error al guardar el producto logger is not a function
+[2025-02-27T15:01:06.390Z] [32minfo[39m: POST /api/products 200 58ms
+[2025-02-27T15:01:06.446Z] [32minfo[39m: GET /api/products 200 51ms
+[2025-02-27T15:01:19.130Z] [32minfo[39m: PUT /api/products/67c07e32e04d91aa959173f9 200 80ms
+[2025-02-27T15:01:19.207Z] [32minfo[39m: GET /api/products 200 72ms
+[2025-02-27T15:01:24.421Z] [32minfo[39m: DELETE /api/products/67c07e32e04d91aa959173f9 200 42ms
+[2025-02-27T15:01:24.466Z] [32minfo[39m: GET /api/products 200 40ms
+[2025-02-27T15:02:03.702Z] [32minfo[39m: GET /api/products 304 94ms
+[2025-02-27T15:02:03.757Z] [32minfo[39m: GET /api/products 304 51ms
+[2025-02-27T15:02:22.475Z] [32minfo[39m: POST /api/products 200 46ms
+[2025-02-27T15:02:22.519Z] [32minfo[39m: GET /api/products 200 39ms
+[2025-02-27T15:51:52.888Z] [32minfo[39m: POST /api/products 200 120ms
+[2025-02-27T15:51:52.997Z] [32minfo[39m: GET /api/products 200 103ms
+[2025-02-27T15:56:09.617Z] [32minfo[39m: GET /api/products 304 53ms
+[2025-02-27T15:56:09.703Z] [32minfo[39m: GET /api/products 304 84ms
+[2025-02-27T15:58:31.453Z] [32minfo[39m: GET /api/products 304 42ms
+[2025-02-27T15:58:31.504Z] [32minfo[39m: GET /api/products 304 50ms
+[2025-02-27T16:02:12.187Z] [32minfo[39m: GET /api/menus 304 197ms
+[2025-02-27T16:02:12.368Z] [32minfo[39m: GET /api/menus 304 176ms
+[2025-02-27T16:02:17.859Z] [32minfo[39m: GET /api/categories 304 84ms
+[2025-02-27T16:02:18.104Z] [32minfo[39m: GET /api/categories 304 240ms
+[2025-02-27T16:02:19.227Z] [32minfo[39m: GET /api/products 304 135ms
+[2025-02-27T16:02:19.330Z] [32minfo[39m: GET /api/products 304 99ms
+[2025-02-27T16:02:21.902Z] [32minfo[39m: GET /api/categories 304 244ms
+[2025-02-27T16:02:22.774Z] [32minfo[39m: GET /api/categories 304 869ms
+[2025-02-27T16:02:25.362Z] [32minfo[39m: GET /api/menus 304 404ms
+[2025-02-27T16:02:25.704Z] [32minfo[39m: GET /api/menus 304 336ms
+[2025-02-27T16:02:27.777Z] [32minfo[39m: GET /api/menus 304 579ms
+[2025-02-27T16:02:27.840Z] [32minfo[39m: GET /api/menus 304 48ms
+[2025-02-27T16:08:59.946Z] [32minfo[39m: GET /api/categories 304 137ms
+[2025-02-27T16:09:00.120Z] [32minfo[39m: GET /api/categories 304 170ms
+[2025-02-27T16:09:00.633Z] [32minfo[39m: GET /api/menus 304 44ms
+[2025-02-27T16:09:00.676Z] [32minfo[39m: GET /api/menus 304 40ms
+[2025-02-27T16:09:02.155Z] [32minfo[39m: GET /api/products 304 530ms
+[2025-02-27T16:09:02.598Z] [32minfo[39m: GET /api/products 304 438ms
+[2025-02-27T16:09:03.220Z] [32minfo[39m: GET /api/categories 304 99ms
+[2025-02-27T16:09:03.420Z] [32minfo[39m: GET /api/categories 304 198ms
+[2025-02-27T16:09:05.544Z] [32minfo[39m: GET /api/products 304 153ms
+[2025-02-27T16:09:05.745Z] [32minfo[39m: GET /api/products 304 194ms
+[2025-02-28T13:29:28.274Z] [31merror[39m: error al obtener los menues Operation `menus.find()` buffering timed out after 10000ms
+[2025-02-28T13:29:28.296Z] [32minfo[39m: GET /api/menus  10049ms
+[2025-02-28T13:29:31.802Z] [31merror[39m: error al obtener los menues Operation `menus.find()` buffering timed out after 10000ms
+[2025-02-28T13:29:31.805Z] [32minfo[39m: GET /api/menus 200 10017ms
+[2025-02-28T13:29:36.261Z] [31merror[39m: error al obtener las categorias Operation `categories.find()` buffering timed out after 10000ms
+[2025-02-28T13:29:36.268Z] [32minfo[39m: GET /api/categories 200 10020ms
+[2025-02-28T13:29:37.627Z] [31merror[39m: error al obtener los productos logger is not a function
+[2025-02-28T13:29:41.820Z] [31merror[39m: error al obtener los menues Operation `menus.find()` buffering timed out after 10000ms
+[2025-02-28T13:29:41.823Z] [32minfo[39m: GET /api/menus 304 10013ms
+[2025-02-28T13:44:32.976Z] [32minfo[39m: GET /api/menus  8595ms
+[2025-02-28T13:44:37.070Z] [32minfo[39m: GET /api/menus 200 4265ms
+[2025-02-28T13:44:43.367Z] [32minfo[39m: GET /api/categories 200 2690ms
+[2025-02-28T13:44:44.844Z] [32minfo[39m: GET /api/categories 304 1471ms
+[2025-02-28T13:44:46.165Z] [32minfo[39m: GET /api/products 200 487ms
+[2025-02-28T13:44:49.368Z] [32minfo[39m: GET /api/products 304 3195ms
+[2025-02-28T13:44:53.832Z] [32minfo[39m: GET /api/menus 304 16756ms
+[2025-02-28T13:45:05.855Z] [32minfo[39m: GET /api/categories 304 504ms
+[2025-02-28T13:45:06.074Z] [32minfo[39m: GET /api/categories 304 213ms
+[2025-02-28T13:45:10.511Z] [32minfo[39m: GET /api/products 304 3061ms
+[2025-02-28T13:45:10.654Z] [32minfo[39m: GET /api/products 304 134ms
+[2025-02-28T13:46:05.511Z] [32minfo[39m: GET /api/categories 304 1682ms
+[2025-02-28T13:46:06.247Z] [32minfo[39m: GET /api/categories 304 732ms
+[2025-02-28T13:46:21.407Z] [32minfo[39m: GET /api/menus 304 285ms
+[2025-02-28T13:46:21.683Z] [32minfo[39m: GET /api/menus 304 270ms
+[2025-02-28T13:46:22.810Z] [32minfo[39m: GET /api/products 304 814ms
+[2025-02-28T13:46:22.863Z] [32minfo[39m: GET /api/products 304 48ms
+[2025-02-28T13:51:41.926Z] [32minfo[39m: GET /api/products 200 2150ms
+[2025-02-28T13:51:42.176Z] [32minfo[39m: GET /api/products 304 238ms
+[2025-02-28T13:51:53.671Z] [32minfo[39m: PUT /api/products/67c08a18e04d91aa95917405 200 338ms
+[2025-02-28T13:51:53.847Z] [32minfo[39m: GET /api/products 200 162ms
+[2025-02-28T13:52:23.711Z] [32minfo[39m: GET /api/categories 304 264ms
+[2025-02-28T13:52:24.522Z] [32minfo[39m: GET /api/categories 304 806ms
+[2025-02-28T13:52:33.687Z] [32minfo[39m: POST /api/categories 200 107ms
+[2025-02-28T13:52:33.784Z] [32minfo[39m: GET /api/categories 200 90ms
+[2025-02-28T13:52:55.505Z] [32minfo[39m: POST /api/categories 200 318ms
+[2025-02-28T13:52:55.801Z] [32minfo[39m: GET /api/categories 200 291ms
+[2025-02-28T13:52:57.550Z] [32minfo[39m: GET /api/products 304 105ms
+[2025-02-28T13:52:57.755Z] [32minfo[39m: GET /api/products 304 201ms
+[2025-02-28T13:53:20.619Z] [32minfo[39m: POST /api/products 200 513ms
+[2025-02-28T13:53:21.101Z] [32minfo[39m: GET /api/products 200 475ms
+[2025-02-28T13:54:50.685Z] [32minfo[39m: GET /api/categories 304 85ms
+[2025-02-28T13:54:51.717Z] [32minfo[39m: GET /api/categories 304 1028ms
+[2025-02-28T13:55:25.662Z] [32minfo[39m: POST /api/categories 200 97ms
+[2025-02-28T13:55:25.948Z] [32minfo[39m: GET /api/categories 200 277ms
+[2025-02-28T13:55:34.024Z] [32minfo[39m: GET /api/products 304 140ms
+[2025-02-28T13:55:34.129Z] [32minfo[39m: GET /api/products 304 101ms
+[2025-02-28T13:56:56.226Z] [32minfo[39m: GET /api/menus 304 118ms
+[2025-02-28T13:56:56.350Z] [32minfo[39m: GET /api/menus 304 121ms
+[2025-02-28T13:56:57.468Z] [32minfo[39m: GET /api/categories 304 304ms
+[2025-02-28T13:56:57.577Z] [32minfo[39m: GET /api/categories 304 103ms
+[2025-02-28T13:58:24.698Z] [32minfo[39m: GET /api/categories 304 126ms
+[2025-02-28T13:58:24.909Z] [32minfo[39m: GET /api/categories 304 207ms
+[2025-02-28T13:58:52.769Z] [32minfo[39m: GET /api/categories 304 643ms
+[2025-02-28T13:58:52.979Z] [32minfo[39m: GET /api/categories 304 206ms
+[2025-02-28T13:59:54.466Z] [32minfo[39m: GET /api/products 304 500ms
+[2025-02-28T14:00:07.370Z] [32minfo[39m: PUT /api/products/67c1bfd0baee63fc7e3d9865 200 79ms
+[2025-02-28T14:00:07.491Z] [32minfo[39m: GET /api/products 200 114ms
+[2025-02-28T14:01:16.634Z] [32minfo[39m: GET /api/menus 304 196ms
+[2025-02-28T14:01:16.928Z] [32minfo[39m: GET /api/menus 304 289ms
+[2025-02-28T14:01:17.936Z] [32minfo[39m: GET /api/categories 304 43ms
+[2025-02-28T14:01:18.390Z] [32minfo[39m: GET /api/categories 304 450ms
+[2025-02-28T14:01:18.979Z] [32minfo[39m: GET /api/products 304 125ms
+[2025-02-28T14:01:19.079Z] [32minfo[39m: GET /api/products 304 97ms
+[2025-02-28T14:10:47.804Z] [32minfo[39m: PUT /api/categories/67a42f9a4d07ac682901f4ca/product/67a430e461da28101eac80ac 200 3ms
+[2025-02-28T14:11:05.786Z] [32minfo[39m: PUT /api/categories/67a42f9a4d07ac682901f4ca/product/67c07e7ee04d91aa95917402 200 1ms
+[2025-02-28T14:20:20.521Z] [32minfo[39m: GET /api/menus 304 214ms
+[2025-02-28T14:20:20.617Z] [32minfo[39m: GET /api/menus 304 92ms
+[2025-02-28T14:22:06.432Z] [32minfo[39m: GET /api/categories 200 1221ms
+[2025-02-28T14:22:06.603Z] [32minfo[39m: GET /api/categories 304 161ms
+[2025-02-28T14:37:52.737Z] [31merror[39m: error al añadir la categoria al menu Category not found
+[2025-02-28T14:37:52.763Z] [32minfo[39m: PUT /api/categories/67c1bfb7baee63fc7e3d9860/menu/67bbf2b3b50b8afac1a20e22 200 181ms
+[2025-02-28T14:38:33.298Z] [31merror[39m: error al añadir la categoria al menu Category not found
+[2025-02-28T14:38:33.301Z] [32minfo[39m: PUT /api/categories/67c1bfb7baee63fc7e3d9860/menu/67bbf2b3b50b8afac1a20e22 200 277ms
+[2025-02-28T14:39:56.535Z] [31merror[39m: error al añadir la categoria al menu Category not found
+[2025-02-28T14:39:56.552Z] [32minfo[39m: PUT /api/categories/67c1bfb7baee63fc7e3d9860/menu/67bbf2b3b50b8afac1a20e22 200 601ms
+[2025-02-28T14:41:53.488Z] [32minfo[39m: GET /api/categories/67c1bfb7baee63fc7e3d9860/ 200 126ms
+[2025-02-28T14:42:25.417Z] [31merror[39m: error al añadir la categoria al menu Category not found
+[2025-02-28T14:42:25.428Z] [32minfo[39m: PUT /api/categories/67c1bfb7baee63fc7e3d9860/menu/67bbf2b3b50b8afac1a20e22 200 128ms
+[2025-02-28T14:44:14.279Z] [31merror[39m: error al añadir la categoria al menu Category not found
+[2025-02-28T14:44:14.293Z] [32minfo[39m: PUT /api/categories/67c1bfb7baee63fc7e3d9860/menu/67bbf2b3b50b8afac1a20e22 200 1227ms
+[2025-02-28T14:48:30.670Z] [31merror[39m: error al añadir la categoria al menu Cannot access 'result' before initialization
+[2025-02-28T14:48:30.683Z] [32minfo[39m: PUT /api/categories/67c1bfb7baee63fc7e3d9860/menu/67bbf2b3b50b8afac1a20e22 200 900ms
+[2025-02-28T14:51:21.874Z] [31merror[39m: error al añadir la categoria al menu Cannot access 'result' before initialization
+[2025-02-28T14:51:21.877Z] [32minfo[39m: PUT /api/categories/67c1bfb7baee63fc7e3d9860/menu/67bbf2b3b50b8afac1a20e22 200 239ms
+[2025-02-28T14:52:40.223Z] [32minfo[39m: PUT /api/categories/67c1bfb7baee63fc7e3d9860/menu/67bbf2b3b50b8afac1a20e22 200 476ms
+[2025-02-28T14:53:38.069Z] [32minfo[39m: PUT /api/categories/67c04faedea55176dc1c4dff/menu/67bbf2b3b50b8afac1a20e22 200 493ms
+[2025-02-28T14:54:02.024Z] [32minfo[39m: PUT /api/categories/67a42f9a4d07ac682901f4ca/menu/67bbf2b3b50b8afac1a20e22 200 470ms
+[2025-02-28T22:14:43.515Z] [32minfo[39m: GET /api/categories 304 563ms
+[2025-02-28T22:14:43.588Z] [32minfo[39m: GET /api/categories 304 61ms
+[2025-02-28T22:14:48.077Z] [32minfo[39m: GET /api/categories 304 63ms
+[2025-02-28T22:14:48.142Z] [32minfo[39m: GET /api/categories 304 62ms
+[2025-03-01T00:11:09.440Z] [31merror[39m: error al añadir el producto a la categoría logger is not a function
+[2025-03-01T00:11:22.051Z] [31merror[39m: error al añadir el producto a la categoría logger is not a function
+[2025-03-01T00:16:49.308Z] [31merror[39m: error al añadir el producto a la categoría logger is not a function

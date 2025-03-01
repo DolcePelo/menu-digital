@@ -1,5 +1,5 @@
 import categoryModel from '../models/category.models.js';
-import productModel from '../models/product.model.js';
+import menuModel from '../models/menu.model.js';
 import logger from '../../config/logger.js';
 
 export default class Category {
@@ -53,23 +53,22 @@ export default class Category {
         }
     }
 
-    addProductToCategory = async (categoryId, productId) => {
+    addCategoryToMenu = async (categoryId, menuId) => {
         try {
             let category = await categoryModel.findById(categoryId);
             if (!category) {
                 throw new Error("Category not found");
             }
-
-            let product = await productModel.findById(productId);
-            if (!product) {
-                throw new Error("Product not found");
+            let menu = await menuModel.findById(menuId);
+            if (!menu) {
+                throw new Error("Menu not found");
             }
-
-            product.category = categoryId;
-            let result = await product.save();
+            menu.categories.push(category);
+            let result = await menu.save();
+            console.log("result", result);
             return result;
         } catch (error) {
-            logger.error("error al agregar producto a la categoria", error);
+            logger.error("error al añadir la categoria al menu", error);
         }
     }
-} 
+};

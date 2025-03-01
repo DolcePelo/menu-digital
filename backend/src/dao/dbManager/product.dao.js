@@ -1,4 +1,5 @@
 import productModel from '../models/product.model.js';
+import categoryModel from '../models/category.models.js';
 import logger from '../../config/logger.js';
 
 export default class Product {
@@ -49,6 +50,27 @@ export default class Product {
             return productUpdated;
         } catch (error) {
             logger("error al actualizar el producto", error);
+        }
+    }
+
+    addProductToCategory = async (productId, categoryId) => {
+        try {
+            let product = await productModel.findById(productId);
+            if (!product) {
+                throw new Error("Product not found");
+            }
+            console.log("product", product);
+            let category = await categoryModel.findById(categoryId);
+            if (!category) {
+                throw new Error("Category not found");
+            }
+            console.log("category", category);
+            category.products.push(product);
+            let result = await category.save();
+            console.log("result", result);
+            return result;
+        } catch (error) {
+            logger("error al agregar el producto a la categoria", error);
         }
     }
 }

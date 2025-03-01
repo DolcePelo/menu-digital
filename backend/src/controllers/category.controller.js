@@ -73,26 +73,18 @@ const updateCategory = async (req, res) => {
     }
 }
 
-const addProductToCategory = async (req, res) => {
+const addCategoryToMenu = async (req, res) => {
+    const { categoryId, menuId } = req.params;
     try {
-        const { categoryId, productId } = req.params;
-
-        const result = category.addProductToCategory(categoryId, productId);
-        if (!result) {
-            res.json({
-                status: 400,
-                message: "Error al agregar producto a la categoria",
-            })
-        }
-
+        const response = await category.addCategoryToMenu(categoryId, menuId);
         res.json({
             status: 200,
-            message: "Producto agregado a la categoria",
-            data: result
+            message: "Category added to menu successfully",
+            data: response
         });
     } catch (error) {
-        logger.error("error al agregar producto a la categoria", error);
+        logger.error("error al añadir la categoria al menu", error);
     }
 }
 
-export { getCategory, getCategoryById, saveCategory, deleteCategory, updateCategory, addProductToCategory };
+export { getCategory, getCategoryById, saveCategory, deleteCategory, updateCategory, addCategoryToMenu };

@@ -73,10 +73,25 @@ const updateProduct = async (req, res) => {
     }
 }
 
+const addProductToCategory = async (req, res) => {
+    const { productId, categoryId } = req.params;
+    try {
+        const response = await product.addProductToCategory(productId, categoryId);
+        res.json({
+            status: 200,
+            message: "Product added to category successfully",
+            data: response
+        });
+    } catch (error) {
+        logger.error("error al añadir el producto a la categoría", error);
+    }
+}
+
 export {
     getProducts,
     getProductById,
     saveProduct,
     deleteProduct,
-    updateProduct
+    updateProduct,
+    addProductToCategory
 };

@@ -13,8 +13,6 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
@@ -62,8 +60,8 @@ header h1 {
   background-color: var(--sidebar-bg);
   height: 100vh;
   padding: 1rem;
-  /* Se eliminan los bordes redondeados */
   box-shadow: 2px 0 5px var(--shadow-color);
+  border-bottom-right-radius: 2rem;
 }
 
 .sidebar ul {

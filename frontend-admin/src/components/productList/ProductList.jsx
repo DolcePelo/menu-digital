@@ -1,26 +1,42 @@
+import { FaEdit, FaTrash } from "react-icons/fa";
+
 const ProductList = ({ products, onDelete, onEdit }) => {
     return (
-        <ul className="border p-4">
-            {products.map((product) => (
-                <li key={product._id} className="flex justify-between items-center mb-2 border-b border-gray-300 pb-2">
-                    <div className="flex items-center gap-4 w-full">
-                        <div className="flex-1">
-                            <h2 className="font-bold">{product.name}</h2>
-                            <p>{product.description}</p>
+        <div className="border p-6 rounded-lg bg-white shadow-md">
+            {/* Encabezados de la tabla */}
+            <div className="grid grid-cols-3 font-bold border-b pb-4 text-gray-700  bg-blue-100 p-2 rounded-md">
+                <span>Producto</span>
+                <span>Precio</span>
+                <span className="text-center">Acciones</span>
+            </div>
+
+            <ul>
+                {products.map((product) => (
+                    <li key={product._id} className="grid grid-cols-3 items-center py-4 border-b">
+                        {/* Nombre y descripción del producto */}
+                        <div className="py-4">
+                            <h2 className="font-semibold">{product.name}</h2>
+                            <p className="text-sm text-gray-500">{product.description}</p>
                         </div>
-                        <span className="text-green-600 font-bold text-right min-w-[80px]">${product.price}</span>
-                    </div>
-                    <div>
-                        <button onClick={() => onEdit(product)} className="bg-yellow-500 text-white px-4 py-2 w-full !rounded-none">
-                            Editar
-                        </button>
-                        <button onClick={() => onDelete(product._id)} className="bg-red-500 text-white px-4 py-2 w-full !rounded-none">
-                            Eliminar
-                        </button>
-                    </div>
-                </li>
-            ))}
-        </ul>
+
+                        {/* Precio */}
+                        <span className="text-green-600 font-bold">${product.price}</span>
+
+                        {/* Acciones con iconos */}
+                        <div className="flex justify-center gap-6">
+                            <FaEdit
+                                className="text-yellow-500 cursor-pointer hover:text-yellow-600 text-xl"
+                                onClick={() => onEdit(product)}
+                            />
+                            <FaTrash
+                                className="text-red-500 cursor-pointer hover:text-red-600 text-xl"
+                                onClick={() => onDelete(product._id)}
+                            />
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
 };
 

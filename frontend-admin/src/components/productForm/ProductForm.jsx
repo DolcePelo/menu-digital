@@ -6,7 +6,7 @@ const ProductForm = ({ onSave, selectedProduct }) => {
 
     useEffect(() => {
         if (selectedProduct) {
-            setProduct(selectedProduct);
+            setProduct(selectedProduct || { name: '', description: '', price: 0 });
         } else {
             setProduct({ name: '', description: '', price: 0 });
         }

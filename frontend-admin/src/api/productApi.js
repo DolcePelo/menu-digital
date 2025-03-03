@@ -50,4 +50,15 @@ const updateProduct = async (id, product) => {
     }
 }
 
-export { getProducts, getProductById, saveProduct, deleteProduct, updateProduct };
+const addProductToCategory = async (productId, categoryId) => {
+    try {
+        const response = await api.put(`/api/products/${productId}/category/${categoryId}`);
+        console.log("response: ", response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error al agregar el producto a la categoría:', error);
+        throw new Error(error.response?.data?.message || 'No se pudo agregar el producto a la categoria');
+    }
+}
+
+export { getProducts, getProductById, saveProduct, deleteProduct, updateProduct, addProductToCategory };

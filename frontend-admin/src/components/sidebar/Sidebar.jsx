@@ -1,21 +1,44 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa'; 
 import './Sidebar.css';
 
 const Sidebar = () => {
+    const [isCollapsed, setIsCollapsed] = useState(false); 
+    const toggleSidebar = () => {
+        setIsCollapsed(!isCollapsed);
+    };
+
     return (
-        <nav className="sidebar">  {/* Aquí usamos la clase sidebar */}
+        <nav className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>  
+            <button className="toggle-btn" onClick={toggleSidebar}>
+                {isCollapsed ? <FaBars /> : <FaTimes />}
+            </button>
+
             <ul>
                 <li>
-                    <Link to="/dashboard" className="block py-2 px-4 rounded hover:bg-gray-700">Dashboard</Link>
+                    <Link to="/dashboard">
+                        <span className="icon">📊</span> 
+                        {!isCollapsed && <span className="text">Dashboard</span>}
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/menus" className="block py-2 px-4 rounded hover:bg-gray-700">Menús</Link>
+                    <Link to="/menus">
+                        <span className="icon">📜</span> 
+                        {!isCollapsed && <span className="text">Menús</span>}
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/categories" className="block py-2 px-4 rounded hover:bg-gray-700">Categorías</Link>
+                    <Link to="/categories">
+                        <span className="icon">📁</span> 
+                        {!isCollapsed && <span className="text">Categorías</span>}
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/products" className="block py-2 px-4 rounded hover:bg-gray-700">Productos</Link>
+                    <Link to="/products">
+                        <span className="icon">🛒</span> 
+                        {!isCollapsed && <span className="text">Productos</span>}
+                    </Link>
                 </li>
             </ul>
         </nav>

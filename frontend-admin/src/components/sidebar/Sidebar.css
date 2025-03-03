@@ -1,31 +1,57 @@
-/* Sidebar */
+/* Sidebar General */
 .sidebar {
     width: 250px;
-    /* Aumentamos el tamaño del sidebar */
     background-color: var(--sidebar-bg);
     height: 100vh;
     padding: 1rem;
     box-shadow: 2px 0 5px var(--shadow-color);
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+/* Estilos cuando está colapsado */
+.sidebar.collapsed {
+    width: 80px; /* Sidebar más pequeño */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
 }
 
 .sidebar ul li {
-    margin-bottom: 1.5rem;
-    /* Aumentamos la distancia entre los enlaces */
+    margin-bottom: 1rem;
 }
 
 .sidebar ul li a {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 1rem;
     border-radius: 8px;
     text-decoration: none;
     color: white;
     font-weight: 600;
-    font-size: 1.1rem;
-    /* Aumentamos el tamaño de la fuente */
+    font-size: 1rem;
     transition: background-color 0.3s ease;
 }
 
-.sidebar ul li a:hover {
-    background-color: var(--sidebar-hover-bg);
+/* Ícono al lado del texto */
+.sidebar ul li a .icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Ocultar el texto si está colapsado */
+.sidebar.collapsed ul li a .text {
+    display: none;
+}
+
+/* Botón de toggle */
+.toggle-btn {
+    background: none;
+    border: none;
     color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
 }

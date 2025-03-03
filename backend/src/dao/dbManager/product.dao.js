@@ -9,8 +9,9 @@ export default class Product {
 
     getProducts = async () => {
         try {
-            const product = await productModel.find();
-            return product;
+            // const product = await productModel.find();
+            const populateProduct = await productModel.find().populate({ path: 'category', model: categoryModel }).lean();
+            return populateProduct;
         } catch (error) {
             logger("error al obtener los productos", error)
         }
@@ -59,15 +60,21 @@ export default class Product {
             if (!product) {
                 throw new Error("Product not found");
             }
-            console.log("product", product);
             let category = await categoryModel.findById(categoryId);
             if (!category) {
                 throw new Error("Category not found");
             }
-            console.log("category", category);
+            
+            if (category.products.includes(product._id)) {
+                return { success: false, message: "Product already exists in this category" };
+            }
+            
             category.products.push(product);
-            let result = await category.save();
-            console.log("result", result);
+            product.category = category._id;
+            
+            await product.save();
+            await category.save();
+            let result = { success: true, message: "Product added to category successfully" };
             return result;
         } catch (error) {
             logger("error al agregar el producto a la categoria", error);

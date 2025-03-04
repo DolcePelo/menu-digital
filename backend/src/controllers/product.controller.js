@@ -60,9 +60,9 @@ const deleteProduct = async (req, res) => {
 
 const updateProduct = async (req, res) => {
     const { id } = req.params;
-    const { name, price, categoryId } = req.body;
+    const { name, description, price, categoryId } = req.body;
     try {
-        const response = await product.updateProduct(id, { name, price, categoryId });
+        const response = await product.updateProduct(id, { name, description, price, categoryId });
         res.json({
             status: 200,
             message: "Product updated successfully",

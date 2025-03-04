@@ -25,6 +25,8 @@ const Products = () => {
     const handleSaveProduct = async (product) => {
         try {
             if (selectedProduct) {
+                console.log("selected product: ", selectedProduct._id)
+                console.log(product)
                 await updateProduct(selectedProduct._id, product);
             } else {
                 await saveProduct(product);

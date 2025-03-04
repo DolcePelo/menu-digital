@@ -43,6 +43,7 @@ const deleteProduct = async (id) => {
 const updateProduct = async (id, product) => {
     try {
         const response = await api.put(`/api/products/${id}`, product);
+        console.log("response: ", response)
         return response.data;
     } catch (error) {
         console.error('Error al actualizar el producto:', error);
@@ -53,7 +54,6 @@ const updateProduct = async (id, product) => {
 const addProductToCategory = async (productId, categoryId) => {
     try {
         const response = await api.put(`/api/products/${productId}/category/${categoryId}`);
-        console.log("response: ", response.data);
         return response.data;
     } catch (error) {
         console.error('Error al agregar el producto a la categoría:', error);

@@ -43,7 +43,6 @@ const deleteProduct = async (id) => {
 const updateProduct = async (id, product) => {
     try {
         const response = await api.put(`/api/products/${id}`, product);
-        console.log("response: ", response)
         return response.data;
     } catch (error) {
         console.error('Error al actualizar el producto:', error);

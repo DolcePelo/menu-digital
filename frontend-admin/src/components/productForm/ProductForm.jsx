@@ -1,12 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 
 const ProductForm = ({ onSave, selectedProduct }) => {
     const [product, setProduct] = useState({ name: '', description: '', price: 0 });
+    const nameInputRef = useRef(null);
 
     useEffect(() => {
         if (selectedProduct) {
-            setProduct(selectedProduct || { name: '', description: '', price: 0 });
+            setProduct(selectedProduct);
+
+            setTimeout(() => {
+                if (nameInputRef.current) {
+                    nameInputRef.current.focus();
+                    nameInputRef.current.select();
+                } else {
+                    console.warn("El input no está disponible todavía.");
+                }
+            }, 200); 
         } else {
             setProduct({ name: '', description: '', price: 0 });
         }
@@ -26,6 +36,7 @@ const ProductForm = ({ onSave, selectedProduct }) => {
     return (
         <form onSubmit={handleSubmit} className="mb-4">
             <input
+                ref={nameInputRef}
                 type="text"
                 name="name"
                 value={product.name}

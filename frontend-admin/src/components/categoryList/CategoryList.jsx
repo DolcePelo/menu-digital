@@ -3,7 +3,7 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 const CategoriaList = ({ categories, onDelete, onEdit }) => {
     return (
         <div className="border p-4 rounded-lg bg-white shadow-md">
-            <div className="grid grid-cols-2 font-bold border-b pb-2 text-gray-700 bg-blue-100 p-2 rounded-md">
+            <div className="grid grid-cols-2 font-bold border-b pb-4 text-gray-700 bg-blue-100 p-2 rounded-md">
                 <span>Categoría</span>
                 <span className="text-center">Acciones</span>
             </div>

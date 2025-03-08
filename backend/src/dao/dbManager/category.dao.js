@@ -52,23 +52,4 @@ export default class Category {
             logger.error("error al actualizar la categoria", error);
         }
     }
-
-    addCategoryToMenu = async (categoryId, menuId) => {
-        try {
-            let category = await categoryModel.findById(categoryId);
-            if (!category) {
-                throw new Error("Category not found");
-            }
-            let menu = await menuModel.findById(menuId);
-            if (!menu) {
-                throw new Error("Menu not found");
-            }
-            menu.categories.push(category);
-            let result = await menu.save();
-            console.log("result", result);
-            return result;
-        } catch (error) {
-            logger.error("error al añadir la categoria al menu", error);
-        }
-    }
 };

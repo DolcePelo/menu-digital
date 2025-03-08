@@ -50,4 +50,13 @@ const updateMenu = async (id, menu) => {
     }
 }
 
-export { getMenus, getMenuById, saveMenu, deleteMenu, updateMenu };
+const addCategoryToMenu = async (menuId, categoryId) => {
+    try {
+        const response = await api.put(`/api/menus/${menuId}/category/${categoryId}`);
+        return response.data;
+    } catch (error) {
+        console.error("Error al agregar categoría al menú:", error);
+    }
+}
+
+export { getMenus, getMenuById, saveMenu, deleteMenu, updateMenu,addCategoryToMenu };

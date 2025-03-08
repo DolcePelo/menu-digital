@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getProducts, saveProduct, deleteProduct, updateProduct, addProductToCategory } from "../../api/productApi.js";
 import ProductForm from "../../components/productForm/ProductForm.jsx";
 import ProductList from "../../components/productList/ProductList.jsx";
-import CategoryModal from "../../components/categoryModal/CategoryModa.jsx";
+import CategoryModal from "../../components/categoryModal/CategoryModal.jsx";
 
 const Products = () => {
     const [products, setProducts] = useState([]);

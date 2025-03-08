@@ -73,18 +73,5 @@ const updateCategory = async (req, res) => {
     }
 }
 
-const addCategoryToMenu = async (req, res) => {
-    const { categoryId, menuId } = req.params;
-    try {
-        const response = await category.addCategoryToMenu(categoryId, menuId);
-        res.json({
-            status: 200,
-            message: "Category added to menu successfully",
-            data: response
-        });
-    } catch (error) {
-        logger.error("error al añadir la categoria al menu", error);
-    }
-}
 
-export { getCategory, getCategoryById, saveCategory, deleteCategory, updateCategory, addCategoryToMenu };
+export { getCategory, getCategoryById, saveCategory, deleteCategory, updateCategory};

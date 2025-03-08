@@ -9,7 +9,6 @@ export default class Product {
 
     getProducts = async () => {
         try {
-            // const product = await productModel.find();
             const populateProduct = await productModel.find().populate({ path: 'category', model: categoryModel }).lean();
             return populateProduct;
         } catch (error) {

@@ -3,6 +3,7 @@ import { getMenus, saveMenu, deleteMenu, updateMenu, addCategoryToMenu, deleteCa
 import MenuForm from "../../components/menuForm/MenuForm.jsx";
 import MenuList from "../../components/menuList/MenuList.jsx";
 import MenuModal from "../../components/menuModal/MenuModal.jsx";
+import Swal from "sweetalert2";
 
 const Menus = () => {
     const [menus, setMenus] = useState([]);
@@ -38,12 +39,27 @@ const Menus = () => {
     };
 
     const handleDeleteMenu = async (id) => {
-        try {
-            await deleteMenu(id);
-            fetchMenus();
-        } catch (error) {
-            console.error("Error al eliminar el menú:", error);
-        }
+        Swal.fire({
+            title: "¿Estás seguro?",
+            text: "No podrás recuperar este menu.",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Sí, eliminar",
+            cancelButtonText: "Cancelar"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await deleteMenu(id);
+                    fetchMenus();
+                    Swal.fire("Eliminado", "El menu ha sido eliminado.", "success");
+                } catch (error) {
+                    console.error("Error al eliminar el menu:", error);
+                    Swal.fire("Error", "No se pudo eliminar el menu.", "error");
+                }
+            }
+        });
     };
 
     const handleEditMenu = (menu) => {
@@ -54,18 +70,34 @@ const Menus = () => {
         try {
             await addCategoryToMenu(menuId, categoryId);
             fetchMenus();
+            setSelectedMenu(null);
         } catch (error) {
             console.error("Error al asignar categoría al menú:", error);
         }
     };
 
     const handleDeleteCategory = async (menuId, categoryId) => {
-        try {
-            await deleteCategoryFromMenu(menuId, categoryId);
-            fetchMenus();
-        } catch (error) {
-            console.error("Error al eliminar categoría del menú:", error);
-        }
+        Swal.fire({
+            title: "¿Estás seguro?",
+            text: "No podrás recuperar esta categoria.",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Sí, eliminar",
+            cancelButtonText: "Cancelar"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await deleteCategoryFromMenu(menuId, categoryId);
+                    fetchMenus();
+                    Swal.fire("Eliminada", "La categoria ha sido eliminada.", "success");
+                } catch (error) {
+                    console.error("Error al eliminar la categoria:", error);
+                    Swal.fire("Error", "No se pudo eliminar la categoria.", "error");
+                }
+            }
+        });
     };
 
     return (

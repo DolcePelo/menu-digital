@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import { getCategories } from "../../api/categoryApi";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
 
 const CategoryModal = ({ isOpen, onClose, onAssignCategory, product }) => {
     const [categories, setCategories] = useState([]);
@@ -18,10 +22,36 @@ const CategoryModal = ({ isOpen, onClose, onAssignCategory, product }) => {
     }, [isOpen]);
 
     const handleAssign = async () => {
-        if (!selectedCategory) return alert("Seleccionar una categoria");
+        if (!selectedCategory) return alert("Seleccionar una categoría");
+        try {
+            await onAssignCategory(product._id, selectedCategory);
 
-        await onAssignCategory(product._id, selectedCategory);
-        onClose();
+            // Muestra un toast en la esquina superior derecha
+            MySwal.fire({
+                toast: true,
+                position: "top-end",
+                icon: "success",
+                title: "Categoría asignada",
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                customClass: {
+                    popup: "swal2-toast",
+                },
+            });
+
+            onClose();
+        } catch (error) {
+            MySwal.fire({
+                toast: true,
+                position: "top-end",
+                icon: "error",
+                title: "Error al asignar",
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+            });
+        }
     };
 
     if (!isOpen) return null;

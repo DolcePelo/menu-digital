@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
 
 const MenuForm = ({ onSave, selectedMenu }) => {
     const [menu, setMenu] = useState({ name: '', description: '' });
@@ -20,6 +21,13 @@ const MenuForm = ({ onSave, selectedMenu }) => {
         e.preventDefault();
         onSave(menu);
         setMenu({ name: '', description: '' });
+
+        Swal.fire({
+                    title: selectedMenu ? "Menu actualizado" : "Menu agregado",
+                    text: "El menu se ha guardado correctamente.",
+                    icon: "success",
+                    confirmButtonText: "OK"
+                });
     };
 
     return (

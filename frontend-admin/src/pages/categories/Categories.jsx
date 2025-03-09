@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getCategories, saveCategory, deleteCategory, updateCategory } from "../../api/categoryApi.js";
 import CategoryForm from "../../components/categoryForm/CategoryForm.jsx";
 import CategoryList from "../../components/categoryList/CategoryList.jsx";
+import Swal from "sweetalert2";
 
 
 const Categories = () => {
@@ -37,12 +38,27 @@ const Categories = () => {
     };
 
     const handleDeleteCategory = async (id) => {
-        try {
-            await deleteCategory(id);
-            fetchCategories();
-        } catch (error) {
-            console.error("Error al eliminar la categoría", error);
-        }
+        Swal.fire({
+            title: "¿Estás seguro?",
+            text: "No podrás recuperar esta categoria.",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Sí, eliminar",
+            cancelButtonText: "Cancelar"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await deleteCategory(id);
+                    fetchCategories();
+                    Swal.fire("Eliminada", "La categoria ha sido eliminada.", "success");
+                } catch (error) {
+                    console.error("Error al eliminar la categoria:", error);
+                    Swal.fire("Error", "No se pudo eliminar la categoria.", "error");
+                }
+            }
+        });
     };
 
     const handleEditCategory = (category) => {

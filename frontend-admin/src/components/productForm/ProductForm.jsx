@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-
+import Swal from 'sweetalert2';
 
 const ProductForm = ({ onSave, selectedProduct }) => {
     const [product, setProduct] = useState({ name: '', description: '', price: 0 });
@@ -31,6 +31,13 @@ const ProductForm = ({ onSave, selectedProduct }) => {
         e.preventDefault();
         onSave(product);
         setProduct({ name: '', description: '', price: 0 });
+        
+        Swal.fire({
+            title: selectedProduct ? "Producto actualizado" : "Producto agregado",
+            text: "El producto se ha guardado correctamente.",
+            icon: "success",
+            confirmButtonText: "OK"
+        });
     };
 
     return (

@@ -3,6 +3,7 @@ import { getProducts, saveProduct, deleteProduct, updateProduct, addProductToCat
 import ProductForm from "../../components/productForm/ProductForm.jsx";
 import ProductList from "../../components/productList/ProductList.jsx";
 import CategoryModal from "../../components/categoryModal/CategoryModal.jsx";
+import Swal from "sweetalert2";
 
 const Products = () => {
     const [products, setProducts] = useState([]);
@@ -38,13 +39,29 @@ const Products = () => {
     };
 
     const handleDeleteProduct = async (id) => {
-        try {
-            await deleteProduct(id);
-            fetchProducts();
-        } catch (error) {
-            console.error("Error al eliminar el producto:", error);
-        }
+        Swal.fire({
+            title: "¿Estás seguro?",
+            text: "No podrás recuperar este producto.",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Sí, eliminar",
+            cancelButtonText: "Cancelar"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await deleteProduct(id);
+                    fetchProducts();
+                    Swal.fire("Eliminado", "El producto ha sido eliminado.", "success");
+                } catch (error) {
+                    console.error("Error al eliminar el producto:", error);
+                    Swal.fire("Error", "No se pudo eliminar el producto.", "error");
+                }
+            }
+        });
     };
+
 
     const handleEditProduct = (product) => {
         setSelectedProduct(product);
@@ -54,6 +71,7 @@ const Products = () => {
         try {
             await addProductToCategory(productId, categoryId);
             fetchProducts();
+            setSelectedProduct(null);
         } catch (error) {
             console.error("Error al asignar categoría al producto:", error);
         }

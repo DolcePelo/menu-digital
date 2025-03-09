@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Swal from "sweetalert2";
 
 const CategoryForm = ({ onSave, selectedCategory }) => {
     const [category, setCategory] = useState({ name: '', description: '' });
@@ -10,7 +11,7 @@ const CategoryForm = ({ onSave, selectedCategory }) => {
             setCategory({ name: '', description: '' });
         }
     }, [selectedCategory]);
-    
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setCategory({ ...category, [name]: value });
@@ -20,6 +21,13 @@ const CategoryForm = ({ onSave, selectedCategory }) => {
         e.preventDefault();
         onSave(category);
         setCategory({ name: '', description: '' });
+
+        Swal.fire({
+            title: selectedCategory ? "Categoria actualizada" : "Categoria agregada",
+            text: "La categoria se ha guardado correctamente.",
+            icon: "success",
+            confirmButtonText: "OK"
+        });
     };
 
     return (

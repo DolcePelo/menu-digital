@@ -652,3 +652,14 @@ Use mongoose.model(name, schema)
 [2025-03-09T04:36:13.961Z] [32minfo[39m: GET /api/categories 304 54ms
 [2025-03-09T04:36:15.478Z] [32minfo[39m: GET /api/menus 304 111ms
 [2025-03-09T04:36:15.591Z] [32minfo[39m: GET /api/menus 304 111ms
+[2025-03-09T05:07:58.593Z] [32minfo[39m: DELETE /api/menus/67c773901bb27129b21ec99f/category/67a42f9a4d07ac682901f4ca 200 196ms
+[2025-03-09T05:07:58.711Z] [32minfo[39m: GET /api/menus 200 114ms
+[2025-03-09T05:07:59.791Z] [32minfo[39m: GET /api/categories 304 56ms
+[2025-03-09T05:08:02.619Z] [32minfo[39m: PUT /api/menus/67c773901bb27129b21ec99f/category/67a42f9a4d07ac682901f4ca 200 168ms
+[2025-03-09T05:08:02.750Z] [32minfo[39m: GET /api/menus 200 106ms
+[2025-03-09T05:17:26.364Z] [32minfo[39m: GET /api/menus 304 116ms
+[2025-03-09T05:17:26.474Z] [32minfo[39m: GET /api/menus 304 106ms
+[2025-03-09T05:21:57.890Z] [32minfo[39m: GET /api/products 304 112ms
+[2025-03-09T05:21:58.030Z] [32minfo[39m: GET /api/products 304 136ms
+[2025-03-09T05:23:41.298Z] [32minfo[39m: POST /api/products 200 68ms
+[2025-03-09T05:23:41.422Z] [32minfo[39m: GET /api/products 200 113ms

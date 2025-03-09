@@ -64,3 +64,4 @@
 [2025-03-03T19:54:45.450Z] [31merror[39m: error al añadir el producto a la categoría logger is not a function
 [2025-03-03T19:56:07.835Z] [31merror[39m: error al añadir el producto a la categoría logger is not a function
 [2025-03-03T19:57:00.610Z] [31merror[39m: error al añadir el producto a la categoría logger is not a function
+[2025-03-09T00:32:08.992Z] [31merror[39m: error al agregar la categoria al menu Cast to ObjectId failed for value "67c1bfb7baee63fc7e3d9860,67c1bfa1baee63fc7e3d985d,67c1c04dbaee63fc7e3d986a,67c6263b0f4ecd9ea02e3116,67c7341246a5e0e7ba84446e,67c738191abf18ced2966f42" (type string) at path "_id" for model "categories"

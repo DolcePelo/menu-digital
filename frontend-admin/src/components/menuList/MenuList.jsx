@@ -1,6 +1,6 @@
 import { FaEdit, FaTrash, FaPlus } from "react-icons/fa";
 
-const MenuList = ({ menus, onDelete, onEdit, onAddCategory }) => {
+const MenuList = ({ menus, onDelete, onEdit, onOpenMenuModal }) => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {menus.length === 0 ? (
@@ -16,8 +16,8 @@ const MenuList = ({ menus, onDelete, onEdit, onAddCategory }) => {
                             <h3 className="text-sm font-semibold">Categorías:</h3>
                             <ul className="text-sm text-gray-700">
                                 {menu.categories && menu.categories.length > 0 ? (
-                                    menu.categories.map((category) => (
-                                        <li key={category._id} className="text-blue-500">
+                                    menu.categories.map((category, index) => (
+                                        <li key={category._id || `category-${index}`} className="text-blue-500">
                                             {category.name}
                                         </li>
                                     ))
@@ -43,9 +43,9 @@ const MenuList = ({ menus, onDelete, onEdit, onAddCategory }) => {
                             </button>
                             <button
                                 className="text-green-500 hover:text-green-600"
-                                onClick={() => onAddCategory(menu._id)}
+                                onClick={() => onOpenMenuModal(menu)} 
                             >
-                                <FaPlus className="text-lg" />
+                                <FaPlus className="text-lg"/>
                             </button>
                         </div>
                     </div>

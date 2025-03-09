@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { getMenus, saveMenu, deleteMenu, updateMenu } from "../../api/menuApi.js";
+import { getMenus, saveMenu, deleteMenu, updateMenu, addCategoryToMenu } from "../../api/menuApi.js";
 import MenuForm from "../../components/menuForm/MenuForm.jsx";
 import MenuList from "../../components/menuList/MenuList.jsx";
+import MenuModal from "../../components/menuModal/MenuModal.jsx";
 
 const Menus = () => {
     const [menus, setMenus] = useState([]);
     const [selectedMenu, setSelectedMenu] = useState(null);
+    const [openModal, setOpenModal] = useState(false);
 
     const fetchMenus = async () => {
         try {
@@ -48,11 +50,30 @@ const Menus = () => {
         setSelectedMenu(menu);
     };
 
+    const handleAssignCategory = async (menuId, categoryId) => {
+        try {
+            await addCategoryToMenu(menuId, categoryId);
+            fetchMenus();
+        } catch (error) {
+            console.error("Error al asignar categoría al menú:", error);
+        }
+    };
+
     return (
         <div className="p-4">
             <h1 className="text-2xl font-bold mb-4">Gestión de Menús</h1>
             <MenuForm onSave={handleSaveMenu} selectedMenu={selectedMenu} />
-            <MenuList menus={menus} onDelete={handleDeleteMenu} onEdit={handleEditMenu} />
+            <MenuList menus={menus} onDelete={handleDeleteMenu} onEdit={handleEditMenu} 
+            onOpenMenuModal={(menu) => {
+                setSelectedMenu(menu);
+                setOpenModal(true);
+            }} />
+            <MenuModal 
+            isOpen={openModal}
+            onClose={() => setOpenModal(false)}
+            onAssignCategory={handleAssignCategory}
+            menu={selectedMenu}
+            />
         </div>
     );
 };

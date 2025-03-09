@@ -510,3 +510,34 @@
 [2025-03-09T02:03:56.100Z] [32minfo[39m: GET /api/menus 304 62ms
 [2025-03-09T02:03:57.985Z] [32minfo[39m: GET /api/products 304 114ms
 [2025-03-09T02:03:58.098Z] [32minfo[39m: GET /api/products 304 110ms
+[2025-03-09T03:08:42.380Z] [31merror[39m: error al obtener los menues Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:08:42.398Z] [32minfo[39m: GET /api/menus 200 87ms
+[2025-03-09T03:08:42.464Z] [31merror[39m: error al obtener los menues Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:08:42.466Z] [32minfo[39m: GET /api/menus 304 61ms
+[2025-03-09T03:08:45.655Z] [31merror[39m: error al obtener los menues Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:08:45.657Z] [32minfo[39m: GET /api/menus 304 58ms
+[2025-03-09T03:08:45.733Z] [31merror[39m: error al obtener los menues Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:08:45.735Z] [32minfo[39m: GET /api/menus 304 75ms
+[2025-03-09T03:08:59.781Z] [32minfo[39m: GET /api/menus 200 870ms
+[2025-03-09T03:09:00.277Z] [32minfo[39m: GET /api/menus 304 491ms
+[2025-03-09T03:09:23.054Z] [32minfo[39m: GET /api/menus 200 77ms
+[2025-03-09T03:09:23.127Z] [32minfo[39m: GET /api/menus 304 68ms
+[2025-03-09T03:09:45.005Z] [31merror[39m: error al obtener los menues Cannot populate path `Category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:09:45.013Z] [32minfo[39m: GET /api/menus 200 75ms
+[2025-03-09T03:09:45.073Z] [31merror[39m: error al obtener los menues Cannot populate path `Category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:09:45.076Z] [32minfo[39m: GET /api/menus 304 59ms
+[2025-03-09T03:10:26.348Z] [31merror[39m: error al obtener los menues Schema hasn't been registered for model "Category".
+Use mongoose.model(name, schema)
+[2025-03-09T03:10:26.359Z] [32minfo[39m: GET /api/menus 304 76ms
+[2025-03-09T03:10:26.420Z] [31merror[39m: error al obtener los menues Schema hasn't been registered for model "Category".
+Use mongoose.model(name, schema)
+[2025-03-09T03:10:26.422Z] [32minfo[39m: GET /api/menus 304 59ms
+[2025-03-09T03:10:53.069Z] [31merror[39m: error al obtener los menues Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:10:53.078Z] [32minfo[39m: GET /api/menus 304 184ms
+[2025-03-09T03:10:53.282Z] [31merror[39m: error al obtener los menues Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:10:53.283Z] [32minfo[39m: GET /api/menus 304 202ms
+[2025-03-09T03:11:29.302Z] [32minfo[39m: GET /api/menus 200 139ms
+[2025-03-09T03:11:29.421Z] [32minfo[39m: GET /api/menus 304 112ms
+[2025-03-09T03:14:10.455Z] [32minfo[39m: GET /api/menus 200 109ms
+[2025-03-09T03:14:10.563Z] [32minfo[39m: GET /api/menus 304 105ms
+[2025-03-09T03:18:04.174Z] [32minfo[39m: GET /api/categories 304 75ms

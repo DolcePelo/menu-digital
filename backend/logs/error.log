@@ -65,3 +65,15 @@
 [2025-03-03T19:56:07.835Z] [31merror[39m: error al añadir el producto a la categoría logger is not a function
 [2025-03-03T19:57:00.610Z] [31merror[39m: error al añadir el producto a la categoría logger is not a function
 [2025-03-09T00:32:08.992Z] [31merror[39m: error al agregar la categoria al menu Cast to ObjectId failed for value "67c1bfb7baee63fc7e3d9860,67c1bfa1baee63fc7e3d985d,67c1c04dbaee63fc7e3d986a,67c6263b0f4ecd9ea02e3116,67c7341246a5e0e7ba84446e,67c738191abf18ced2966f42" (type string) at path "_id" for model "categories"
+[2025-03-09T03:08:42.380Z] [31merror[39m: error al obtener los menues Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:08:42.464Z] [31merror[39m: error al obtener los menues Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:08:45.655Z] [31merror[39m: error al obtener los menues Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:08:45.733Z] [31merror[39m: error al obtener los menues Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:09:45.005Z] [31merror[39m: error al obtener los menues Cannot populate path `Category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:09:45.073Z] [31merror[39m: error al obtener los menues Cannot populate path `Category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:10:26.348Z] [31merror[39m: error al obtener los menues Schema hasn't been registered for model "Category".
+Use mongoose.model(name, schema)
+[2025-03-09T03:10:26.420Z] [31merror[39m: error al obtener los menues Schema hasn't been registered for model "Category".
+Use mongoose.model(name, schema)
+[2025-03-09T03:10:53.069Z] [31merror[39m: error al obtener los menues Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.
+[2025-03-09T03:10:53.282Z] [31merror[39m: error al obtener los menues Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.

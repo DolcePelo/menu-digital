@@ -9,27 +9,32 @@ const MenuModal = ({ isOpen, onClose, onAssignCategory, menu }) => {
         const fetchCategories = async () => {
             try {
                 const response = await getCategories();
-                setCategories(response.data);
+                const availableCategories = response.data.filter(
+                    (category) => !menu.categories.some((assignedCategory) => assignedCategory._id === category._id)
+                );
+                setCategories(availableCategories);
             } catch (error) {
-                console.error("error obteniendo categorias para agregar a productos", error);
+                console.error("Error obteniendo categorías para agregar a productos", error);
             }
         };
+
         if (isOpen) {
             fetchCategories();
-            setSelectedCategory([]);
+            setSelectedCategory([]); 
         }
-    }, [isOpen]);
+    }, [isOpen, menu]); 
 
     const handleCheckboxChange = (categoryId) => {
         setSelectedCategory(prev =>
             prev.includes(categoryId)
                 ? prev.filter(id => id !== categoryId) 
-                : [...prev, categoryId]
+                : [...prev, categoryId] 
         );
     };
 
     const handleAssign = async () => {
-        if (selectedCategory.length === 0) return alert("Seleccionar al menos una categoria");
+        if (selectedCategory.length === 0) return alert("Seleccionar al menos una categoría");
+
         try {
             await Promise.all(selectedCategory.map((categoryId) => onAssignCategory(menu._id, categoryId)));
 
@@ -37,11 +42,10 @@ const MenuModal = ({ isOpen, onClose, onAssignCategory, menu }) => {
             onClose();
         } catch (error) {
             console.error("Error al asignar categoría al menú:", error);
-        };
+        }
     };
 
     if (!isOpen) return null;
-    
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
@@ -49,17 +53,21 @@ const MenuModal = ({ isOpen, onClose, onAssignCategory, menu }) => {
                 <h2 className="text-xl font-bold mb-4">Asignar Categorías</h2>
 
                 <div className="mb-4 max-h-40 overflow-y-auto border p-2 rounded">
-                    {categories.map((category) => (
-                        <label key={category._id} className="flex items-center gap-2 mb-2">
-                            <input
-                                type="checkbox"
-                                value={category._id}
-                                checked={selectedCategory.includes(category._id)}
-                                onChange={() => handleCheckboxChange(category._id)}
-                            />
-                            {category.name}
-                        </label>
-                    ))}
+                    {categories.length === 0 ? (
+                        <p>No hay categorías disponibles para asignar</p>
+                    ) : (
+                        categories.map((category) => (
+                            <label key={category._id} className="flex items-center gap-2 mb-2">
+                                <input
+                                    type="checkbox"
+                                    value={category._id}
+                                    checked={selectedCategory.includes(category._id)}
+                                    onChange={() => handleCheckboxChange(category._id)}
+                                />
+                                {category.name}
+                            </label>
+                        ))
+                    )}
                 </div>
 
                 <div className="flex justify-end gap-4">
@@ -72,7 +80,7 @@ const MenuModal = ({ isOpen, onClose, onAssignCategory, menu }) => {
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 export default MenuModal;

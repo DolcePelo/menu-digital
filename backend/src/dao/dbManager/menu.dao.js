@@ -9,7 +9,7 @@ export default class Menu {
 
     getMenus = async () => {
         try {
-            const menu = await menuModel.find();
+            const menu = await menuModel.find().populate({ path: 'categories', model: categoryModel }).lean();
             return menu;
         } catch (error) {
             logger.error("error al obtener los menues", error)

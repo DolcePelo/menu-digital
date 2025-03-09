@@ -91,11 +91,26 @@ const addCategoryToMenu = async (req, res) => {
     }
 }
 
+const deleteCategoryFromMenu = async (req, res) => {
+    try {
+        const { menuId, categoryId } = req.params;
+        const response = await menu.deleteCategoryFromMenu(menuId, categoryId);
+        res.json({
+            status: 200,
+            message: "Category deleted from menu successfully",
+            data: response
+        });
+    } catch (error) {
+        logger.error("error al eliminar la categoria del menu", error);
+    }
+}
+
 export {
     getMenus,
     getMenuById,
     saveMenu,
     deleteMenu,
     updateMenu,
-    addCategoryToMenu
+    addCategoryToMenu,
+    deleteCategoryFromMenu
 }

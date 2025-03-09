@@ -70,4 +70,22 @@ export default class Menu {
             logger.error("error al agregar la categoria al menu", error);
         }
     }
+
+    deleteCategoryFromMenu = async (menuId, categoryId) => {
+        try {
+            let menu = await menuModel.findById(menuId);
+            if (!menu) {
+                throw new Error("Menu not found");
+            }
+            let category = await categoryModel.findById(categoryId);
+            if (!category) {
+                throw new Error("Category not found");
+            }
+            menu.categories = menu.categories.filter(c => c.toString() !== categoryId);
+            let result = await menu.save();
+            return result;
+        } catch (error) {
+            logger.error("error al eliminar la categoria del menu", error);
+        }
+    }
 }

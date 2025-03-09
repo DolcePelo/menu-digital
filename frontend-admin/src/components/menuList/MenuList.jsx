@@ -7,14 +7,14 @@ const MenuList = ({ menus, onDelete, onEdit, onOpenMenuModal }) => {
                 <p className="text-gray-500 text-center col-span-full">No hay menús disponibles.</p>
             ) : (
                 menus.map((menu) => (
-                    <div key={menu._id} className="bg-white shadow-md rounded-lg p-4 border">
+                    <div key={menu._id} className="bg-white shadow-md rounded-lg p-4 border flex flex-col h-full">
                         <h2 className="text-lg font-bold text-gray-800">{menu.name}</h2>
                         <p className="text-gray-600">{menu.description || "Sin descripción"}</p>
 
                         {/* Listado de categorías */}
-                        <div className="mt-2">
+                        <div className="mt-2 flex-1">
                             <h3 className="text-sm font-semibold">Categorías:</h3>
-                            <ul className="text-sm text-gray-700">
+                            <ul className="text-md text-gray-700">
                                 {menu.categories && menu.categories.length > 0 ? (
                                     menu.categories.map((category, index) => (
                                         <li key={category._id || `category-${index}`} className="text-blue-500">
@@ -28,7 +28,7 @@ const MenuList = ({ menus, onDelete, onEdit, onOpenMenuModal }) => {
                         </div>
 
                         {/* Botones de acción */}
-                        <div className="flex justify-between items-center mt-4">
+                        <div className="flex justify-between items-center mt-4 pt-4 border-t">
                             <button
                                 className="text-yellow-500 hover:text-yellow-600"
                                 onClick={() => onEdit(menu)}
@@ -56,4 +56,3 @@ const MenuList = ({ menus, onDelete, onEdit, onOpenMenuModal }) => {
 };
 
 export default MenuList;
-

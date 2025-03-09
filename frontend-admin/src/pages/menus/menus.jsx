@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getMenus, saveMenu, deleteMenu, updateMenu, addCategoryToMenu } from "../../api/menuApi.js";
+import { getMenus, saveMenu, deleteMenu, updateMenu, addCategoryToMenu, deleteCategoryFromMenu } from "../../api/menuApi.js";
 import MenuForm from "../../components/menuForm/MenuForm.jsx";
 import MenuList from "../../components/menuList/MenuList.jsx";
 import MenuModal from "../../components/menuModal/MenuModal.jsx";
@@ -59,11 +59,20 @@ const Menus = () => {
         }
     };
 
+    const handleDeleteCategory = async (menuId, categoryId) => {
+        try {
+            await deleteCategoryFromMenu(menuId, categoryId);
+            fetchMenus();
+        } catch (error) {
+            console.error("Error al eliminar categoría del menú:", error);
+        }
+    };
+
     return (
         <div className="p-4">
             <h1 className="text-2xl font-bold mb-4">Gestión de Menús</h1>
             <MenuForm onSave={handleSaveMenu} selectedMenu={selectedMenu} />
-            <MenuList menus={menus} onDelete={handleDeleteMenu} onEdit={handleEditMenu} 
+            <MenuList menus={menus} onDelete={handleDeleteMenu} onEdit={handleEditMenu} onDeleteCategory={handleDeleteCategory}
             onOpenMenuModal={(menu) => {
                 setSelectedMenu(menu);
                 setOpenModal(true);

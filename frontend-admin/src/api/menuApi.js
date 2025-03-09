@@ -59,4 +59,13 @@ const addCategoryToMenu = async (menuId, categoryId) => {
     }
 }
 
-export { getMenus, getMenuById, saveMenu, deleteMenu, updateMenu,addCategoryToMenu };
+const deleteCategoryFromMenu = async (menuId, categoryId) => {
+    try {
+        const response = await api.delete(`/api/menus/${menuId}/category/${categoryId}`);
+        return response.data;
+    } catch (error) {
+        console.error("Error al eliminar categoría del menú:", error);
+    }
+}
+
+export { getMenus, getMenuById, saveMenu, deleteMenu, updateMenu, addCategoryToMenu, deleteCategoryFromMenu };

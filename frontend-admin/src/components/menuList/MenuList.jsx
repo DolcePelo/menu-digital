@@ -1,6 +1,8 @@
 import { FaEdit, FaTrash, FaPlus } from "react-icons/fa";
+import { GiCancel } from "react-icons/gi";
 
-const MenuList = ({ menus, onDelete, onEdit, onOpenMenuModal }) => {
+
+const MenuList = ({ menus, onDelete, onEdit, onOpenMenuModal, onDeleteCategory }) => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {menus.length === 0 ? (
@@ -19,6 +21,12 @@ const MenuList = ({ menus, onDelete, onEdit, onOpenMenuModal }) => {
                                     menu.categories.map((category, index) => (
                                         <li key={category._id || `category-${index}`} className="text-blue-500">
                                             {category.name}
+                                            <span
+                                                onClick={() => onDeleteCategory(menu._id, category._id)}
+                                                className="text-red-600 hover:text-red-800  cursor-pointer pl-2 inline-flex items-center"
+                                            >
+                                                <GiCancel className="text-sm" />
+                                            </span>
                                         </li>
                                     ))
                                 ) : (
@@ -43,9 +51,9 @@ const MenuList = ({ menus, onDelete, onEdit, onOpenMenuModal }) => {
                             </button>
                             <button
                                 className="text-green-500 hover:text-green-600"
-                                onClick={() => onOpenMenuModal(menu)} 
+                                onClick={() => onOpenMenuModal(menu)}
                             >
-                                <FaPlus className="text-lg"/>
+                                <FaPlus className="text-lg" />
                             </button>
                         </div>
                     </div>

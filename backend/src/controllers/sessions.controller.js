@@ -34,7 +34,7 @@ const forgotLogic = async (req, res) => {
     const { email, newPassword } = req.body;
     const result = await UserModel.find({ email: email });
 
-    if(result.length === 0) {
+    if (result.length === 0) {
         return res.status(401).json({
             error: "User not found"
         });
@@ -49,4 +49,17 @@ const forgotLogic = async (req, res) => {
     }
 }
 
-export {loginSession, registerSession, registerError, forgotLogic};
+const checkSession = async (req, res) => {
+    if (req.session.user) {
+        res.status(200).json({
+            message: "User is logged in",
+            user: req.session.user,
+        });
+    } else {
+        res.status(401).json({
+            message: "User is not logged in",
+        });
+    }
+}
+
+export { loginSession, registerSession, registerError, forgotLogic, checkSession };

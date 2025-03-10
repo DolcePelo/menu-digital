@@ -24,7 +24,7 @@ const initializePassport = () => {
                 usernameField: "email",
             },
             async (req, username, password, done) => {
-                const { email, name, role } = req.body;
+                const { email, name } = req.body;
                 try {
                     console.log(username);
                     
@@ -39,7 +39,6 @@ const initializePassport = () => {
                         email,
                         password: createHash(password),
                         name,
-                        role,
                     };
 
                     console.log("newUser", newUser);
@@ -53,7 +52,7 @@ const initializePassport = () => {
     );
 
     passport.serializeUser((user, done) => {
-        done(null, user._id);
+        done(null, user._id); // ojo con el _id
     });
 
     passport.deserializeUser(async (id, done) => {

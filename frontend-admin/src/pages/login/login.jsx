@@ -13,7 +13,6 @@ const Login = ({ setUser }) => {
         try {
             const response = await login(email, password); //ojo con las {}
             setUser(response);
-            console.log("reponse.data: ",response)
             navigate("/dashboard");
         } catch (error) {
             setError("usuario o contraseña incorrectos");

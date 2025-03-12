@@ -11,7 +11,7 @@ const Login = ({ setUser }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await login(email, password); //ojo con las {}
+            const response = await login(email, password); 
             setUser(response);
             navigate("/dashboard");
         } catch (error) {

@@ -14,6 +14,11 @@ import ProtectedRoute from './components/protectedRoute/protectedRoute.jsx';
 function App() {
   const [user, setUser] = useState(null);
 
+  const logout = () => {
+    setUser(null);
+};
+
+
   return (
     <Router>
       <Routes>
@@ -29,7 +34,7 @@ function App() {
               <div className="flex h-screen">
                 <Sidebar />
                 <div className="flex flex-col flex-1">
-                  <Navbar />
+                  <Navbar user={user} logout={logout}/>
                   <main className="p-4">
                     <Routes>
                       <Route path="/dashboard" element={<Dashboard />} />

@@ -3,6 +3,7 @@ import api from "./axiosConfig.js";
 const login = async (email, password) => {
     try {
         const response = await api.post("/api/session/login", { email, password }, { withCredentials: true });
+        console.log("response.data de api: ",response.data)
         return response.data;
     } catch (error) {
         console.error("Login error: ", error.response?.data || error.message);

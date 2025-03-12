@@ -12,7 +12,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await signup({ email, password, name });
+            await signup( email, password, name );
             navigate("/login");
         } catch (error) {
             setError("Error al crear la cuenta");

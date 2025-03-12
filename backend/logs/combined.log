@@ -735,3 +735,13 @@ Use mongoose.model(name, schema)
 [2025-03-12T01:07:49.236Z] [32minfo[39m: POST /api/session/signup 401 68ms
 [2025-03-12T01:07:58.420Z] [32minfo[39m: POST /api/session/signup 401 59ms
 [2025-03-12T01:08:30.216Z] [32minfo[39m: POST /api/session/signup 401 59ms
+[2025-03-12T13:37:33.789Z] [32minfo[39m: GET /api/menus 304 145ms
+[2025-03-12T13:37:33.921Z] [32minfo[39m: GET /api/menus 304 124ms
+[2025-03-12T13:37:34.481Z] [32minfo[39m: GET /api/categories 304 69ms
+[2025-03-12T13:37:34.536Z] [32minfo[39m: GET /api/categories 304 50ms
+[2025-03-12T13:37:35.719Z] [32minfo[39m: GET /api/products 304 118ms
+[2025-03-12T13:37:35.835Z] [32minfo[39m: GET /api/products 304 113ms
+[2025-03-12T13:37:36.271Z] [32minfo[39m: GET /api/categories 304 58ms
+[2025-03-12T13:37:36.329Z] [32minfo[39m: GET /api/categories 304 54ms
+[2025-03-12T13:37:39.080Z] [32minfo[39m: DELETE /api/categories/67d0f81d202bebc1247b323a 200 63ms
+[2025-03-12T13:37:39.145Z] [32minfo[39m: GET /api/categories 200 55ms

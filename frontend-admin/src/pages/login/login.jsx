@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../api/authConfig.js";
 
-const Login = () => {
+const Login = ({ setUser }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
@@ -11,7 +11,9 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await login({email, password}); //ojo con las {}
+            const response = await login(email, password); //ojo con las {}
+            setUser(response);
+            console.log("reponse.data: ",response)
             navigate("/dashboard");
         } catch (error) {
             setError("usuario o contraseña incorrectos");

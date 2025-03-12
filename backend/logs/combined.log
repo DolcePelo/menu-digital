@@ -732,3 +732,6 @@ Use mongoose.model(name, schema)
 [2025-03-10T03:23:00.820Z] [32minfo[39m: POST /api/session/login 200 1133ms
 [2025-03-10T03:42:16.779Z] [32minfo[39m: GET /api/session/check 200 844ms
 [2025-03-10T03:44:30.056Z] [32minfo[39m: GET /api/session/check 200 811ms
+[2025-03-12T01:07:49.236Z] [32minfo[39m: POST /api/session/signup 401 68ms
+[2025-03-12T01:07:58.420Z] [32minfo[39m: POST /api/session/signup 401 59ms
+[2025-03-12T01:08:30.216Z] [32minfo[39m: POST /api/session/signup 401 59ms

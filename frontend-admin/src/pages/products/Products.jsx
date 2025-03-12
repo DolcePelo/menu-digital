@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { getProducts, saveProduct, deleteProduct, updateProduct, addProductToCategory } from "../../api/productApi.js";
-import ProductForm from "../../components/productForm/ProductForm.jsx";
-import ProductList from "../../components/productList/ProductList.jsx";
-import CategoryModal from "../../components/categoryModal/CategoryModal.jsx";
+import ProductForm from "../../components/product/productForm/ProductForm.jsx";
+import ProductList from "../../components/product/productList/ProductList.jsx";
+import CategoryModal from "../../components/category/categoryModal/CategoryModal.jsx";
 import Swal from "sweetalert2";
 
 const Products = () => {

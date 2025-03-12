@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getCategories } from "../../api/categoryApi";
+import { getCategories } from "../../../api/categoryApi";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 

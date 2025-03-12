@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getCategories, saveCategory, deleteCategory, updateCategory } from "../../api/categoryApi.js";
-import CategoryForm from "../../components/categoryForm/CategoryForm.jsx";
-import CategoryList from "../../components/categoryList/CategoryList.jsx";
+import CategoryForm from "../../components/category/categoryForm/CategoryForm.jsx";
+import CategoryList from "../../components/category/categoryList/CategoryList.jsx";
 import Swal from "sweetalert2";
 
 

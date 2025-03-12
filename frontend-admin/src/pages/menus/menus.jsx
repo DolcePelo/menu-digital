@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getMenus, saveMenu, deleteMenu, updateMenu, addCategoryToMenu, deleteCategoryFromMenu } from "../../api/menuApi.js";
-import MenuForm from "../../components/menuForm/MenuForm.jsx";
-import MenuList from "../../components/menuList/MenuList.jsx";
-import MenuModal from "../../components/menuModal/MenuModal.jsx";
+import MenuForm from "../../components/menu/menuForm/MenuForm.jsx";
+import MenuList from "../../components/menu/menuList/MenuList.jsx";
+import MenuModal from "../../components/menu/menuModal/MenuModal.jsx";
 import Swal from "sweetalert2";
 
 const Menus = () => {

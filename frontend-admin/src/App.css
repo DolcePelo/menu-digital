@@ -145,6 +145,18 @@ button:focus-visible {
   font-weight: bold;
 }
 
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Ajusta el espacio entre los elementos */
+}
+
+.input-group button {
+  margin: 0; /* Elimina cualquier margen que pueda estar desalineando */
+  height: 100%; /* Asegura que el botón tenga la misma altura que los inputs */
+}
+
+
 /* Responsive design */
 @media (max-width: 768px) {
   .flex {

@@ -13,6 +13,7 @@ import ProtectedRoute from './components/protectedRoute/protectedRoute.jsx';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [commercialPremises, setCommercialPremises] = useState("Nombre del comercio");
 
   const logout = () => {
     setUser(null);
@@ -34,10 +35,10 @@ function App() {
               <div className="flex h-screen">
                 <Sidebar />
                 <div className="flex flex-col flex-1">
-                  <Navbar user={user} logout={logout}/>
+                  <Navbar user={user} logout={logout} commercialPremises={commercialPremises} />
                   <main className="p-4">
                     <Routes>
-                      <Route path="/dashboard" element={<Dashboard />} />
+                      <Route path="/dashboard" element={<Dashboard setCommercialPremises={setCommercialPremises} /> }/>
                       <Route path="/menus" element={<Menus />} />
                       <Route path="/categories" element={<Categories />} />
                       <Route path="/products" element={<Products />} />

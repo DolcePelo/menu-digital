@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Sun, Moon, User } from 'lucide-react';
 import './Navbar.css';
 
-const Navbar = ({ user, logout }) => {
+const Navbar = ({ user, logout, commercialPremises }) => {
     const [darkMode, setDarkMode] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -11,7 +11,7 @@ const Navbar = ({ user, logout }) => {
 
     return (
         <header className={`flex justify-between items-center p-4 ${darkMode ? 'bg-gray-900 text-white' : 'bg-[#3498db] text-[#2c3e50]'} shadow-md relative`}>
-            <h1 className="text-xl font-bold">Nombre del comercio</h1>
+            <h1 className="text-xl font-bold">{commercialPremises}</h1>
 
             <div className="flex items-center space-x-6">
                 <button

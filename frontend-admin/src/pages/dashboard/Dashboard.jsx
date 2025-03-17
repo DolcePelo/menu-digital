@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { getMenus } from "../../api/menuApi.js";
+import { QRCodeCanvas } from "qrcode.react";
 
 const Dashboard = ({ setCommercialPremises }) => {
     const [inputValue, setInputValue] = useState("");
     const [menus, setMenus] = useState([]);
-    const [selectedMenu, setSelectedMenu] = useState(""); 
+    const [selectedMenu, setSelectedMenu] = useState("");
+    const qrRef = useRef(null);
 
     useEffect(() => {
         const fetchMenus = async () => {
@@ -16,7 +18,7 @@ const Dashboard = ({ setCommercialPremises }) => {
             }
         };
         fetchMenus();
-    }, []); 
+    }, []);
 
     const handlePublishCommerce = () => {
         console.log("Publicando comercio:", inputValue);
@@ -30,6 +32,20 @@ const Dashboard = ({ setCommercialPremises }) => {
             return;
         }
         console.log("Publicando menú con ID:", selectedMenu);
+    };
+
+    const menuUrl = selectedMenu ? `http://localhost:5173/menu/${selectedMenu}` : "";
+
+    // Función para descargar el QR como imagen
+    const handleDownloadQR = () => {
+        if (qrRef.current) {
+            const canvas = qrRef.current.querySelector("canvas");
+            const url = canvas.toDataURL("image/png");
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = `QR_Menu_${selectedMenu}.png`;
+            link.click();
+        }
     };
 
     return (
@@ -76,6 +92,25 @@ const Dashboard = ({ setCommercialPremises }) => {
                     Publicar Menú
                 </button>
             </div>
+
+            {selectedMenu && (
+                <div className="mt-6 text-center flex flex-col items-center">
+                    <h2 className="text-lg font-semibold mb-2">Código QR del Menú</h2>
+                    {console.log("QR generado con URL:", menuUrl)}
+
+                    <div ref={qrRef} className="inline-block p-2 bg-white shadow-md rounded-lg">
+                        <QRCodeCanvas value={menuUrl} size={200} />
+                    </div>
+
+                    <button
+                        onClick={handleDownloadQR}
+                        className="mt-3 bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-all"
+                    >
+                        Descargar QR
+                    </button>
+                </div>
+
+            )}
         </div>
     );
 };

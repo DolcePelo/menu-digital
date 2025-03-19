@@ -34,7 +34,7 @@ const Dashboard = ({ setCommercialPremises }) => {
         console.log("Publicando menú con ID:", selectedMenu);
     };
 
-    const menuUrl = selectedMenu ? `http://localhost:5173/menu/${selectedMenu}` : "";
+    const menuUrl = selectedMenu ? `http://localhost:5174/menu/${selectedMenu}` : "";
 
     // Función para descargar el QR como imagen
     const handleDownloadQR = () => {

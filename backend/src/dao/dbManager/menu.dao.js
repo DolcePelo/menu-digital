@@ -18,7 +18,7 @@ export default class Menu {
 
     getMenuById = async (id) => {
         try {
-            const menu = await menuModel.findById(id);
+            const menu = await menuModel.findById(id).populate({ path: 'categories', model: categoryModel }).lean();
             return menu;
         } catch (error) {
             logger.error("error al obtener el menu por id", error);

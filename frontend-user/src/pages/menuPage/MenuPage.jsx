@@ -14,6 +14,7 @@ const MenuPage = () => {
                 setLoading(true);
                 const menuData = await getMenuById(id);
                 console.log(menuData.data);
+                console.log(menuData.data.categories);
                 setMenu(menuData.data);
             } catch (error) {
                 setError("error al cargar el menú", error.message);
@@ -36,9 +37,9 @@ const MenuPage = () => {
             <p>{menu.description}</p>
             <h2>Categorías</h2>
             <ul>
-                {menu.categories.map((categoryId, index) => (
-                    <li key={categoryId}>
-                        Categoría {index + 1}: {categoryId}
+                {menu.categories.map((category, index) => (
+                    <li key={category._id}>
+                        Categoría {index + 1}: {category.name}
                     </li>
                 ))}
             </ul>

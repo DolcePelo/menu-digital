@@ -4,7 +4,7 @@ const categoryCollection = "categories";
 
 const CategorySchema = new mongoose.Schema({
     name: { type: String, required: true },
-    products: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
+    products: [{ type: mongoose.Schema.Types.ObjectId, ref: "products" }],
 });
 
 const Category = mongoose.model(categoryCollection, CategorySchema);

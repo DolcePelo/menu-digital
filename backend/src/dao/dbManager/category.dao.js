@@ -1,5 +1,4 @@
 import categoryModel from '../models/category.models.js';
-import menuModel from '../models/menu.model.js';
 import logger from '../../config/logger.js';
 
 export default class Category {

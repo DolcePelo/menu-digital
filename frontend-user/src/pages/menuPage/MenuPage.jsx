@@ -13,8 +13,6 @@ const MenuPage = () => {
             try {
                 setLoading(true);
                 const menuData = await getMenuById(id);
-                console.log(menuData.data);
-                console.log(menuData.data.categories);
                 setMenu(menuData.data);
             } catch (error) {
                 setError("error al cargar el menú", error.message);
@@ -37,12 +35,26 @@ const MenuPage = () => {
             <p>{menu.description}</p>
             <h2>Categorías</h2>
             <ul>
-                {menu.categories.map((category, index) => (
+                {menu?.categories?.map((category, index) => (
                     <li key={category._id}>
-                        Categoría {index + 1}: {category.name}
+                        <h2>Categoría {index + 1}: {category.name}</h2>
+
+                        {/* Iteramos sobre los productos de cada categoría */}
+                        {category.products && Array.isArray(category.products) && category.products.length > 0 ? (
+                            <ul>
+                                {category.products.map((product, index) => (
+                                    <li key={`${product._id}-${index}`}>
+                                        <h3>Producto {index + 1}: {product.name}</h3>
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <p>No hay productos en esta categoría</p>
+                        )}
                     </li>
                 ))}
             </ul>
+
         </div>
     )
 };

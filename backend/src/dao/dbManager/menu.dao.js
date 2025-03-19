@@ -1,5 +1,6 @@
 import menuModel from '../models/menu.model.js';
 import categoryModel from '../models/category.models.js';
+import productModel from '../models/product.model.js';
 import logger from '../../config/logger.js';
 
 export default class Menu {
@@ -18,7 +19,16 @@ export default class Menu {
 
     getMenuById = async (id) => {
         try {
-            const menu = await menuModel.findById(id).populate({ path: 'categories', model: categoryModel }).lean();
+            const menu = await menuModel.findById(id).populate({
+                path: 'categories',
+                model: categoryModel,
+                populate: {
+                    path: 'products',
+                    model: productModel
+                }
+            })
+            .lean();
+        return menu;
             return menu;
         } catch (error) {
             logger.error("error al obtener el menu por id", error);

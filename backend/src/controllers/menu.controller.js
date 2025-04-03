@@ -73,6 +73,32 @@ const updateMenu = async (req, res) => {
     }
 }
 
+const updateMenuCustomization = async (req, res) => {
+    const { id } = req.params;
+    const { businessName, logo, banner, style } = req.body;
+    try {
+        const response = await menu.updateMenuCustomization(id, { businessName, logo, banner, style });
+        res.json({
+            status: 200,
+            message: "Menu customization updated successfully",
+            data: response
+        });
+
+        if (!response) {
+            return res.status(404).json({ message: "Menú no encontrado" });
+        }
+
+        res.json({
+            status: 200,
+            message: "Personalización del menú actualizada con éxito",
+            data: response
+        });
+    } catch (error) {
+        logger.error("error al actualizar la personalizacion del menu", error);
+        res.status(500).json({ message: "Error al actualizar la personalización del menú" });
+    }
+}
+
 const addCategoryToMenu = async (req, res) => {
     try {
         const { menuId, categoryId } = req.params;
@@ -112,5 +138,6 @@ export {
     deleteMenu,
     updateMenu,
     addCategoryToMenu,
-    deleteCategoryFromMenu
+    deleteCategoryFromMenu,
+    updateMenuCustomization,
 }

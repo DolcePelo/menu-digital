@@ -27,8 +27,7 @@ export default class Menu {
                     model: productModel
                 }
             })
-            .lean();
-        return menu;
+                .lean();
             return menu;
         } catch (error) {
             logger.error("error al obtener el menu por id", error);
@@ -45,7 +44,7 @@ export default class Menu {
         }
     }
 
-    deleteMenu =async (id) => {
+    deleteMenu = async (id) => {
         try {
             let menu = await menuModel.findByIdAndDelete(id);
             return menu;
@@ -60,6 +59,15 @@ export default class Menu {
             return menuUpdated;
         } catch (error) {
             logger.error("error al actualizar el menu", error);
+        }
+    }
+
+    updateMenuCustomization = async (id, customizationData) => {
+        try {
+            let menuUpdated = await menuModel.findByIdAndUpdate(id, customizationData, { new: true });
+            return menuUpdated;
+        } catch (error) {
+            logger.error("error al actualizar la personalizacion del menu", error);
         }
     }
 

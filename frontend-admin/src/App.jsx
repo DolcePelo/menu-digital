@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Sidebar from './components/sidebar/Sidebar.jsx';
 import Navbar from './components/navbar/Navbar.jsx';
 import Dashboard from './pages/dashboard/Dashboard.jsx';
-import Menus from './pages/menus/Menus.jsx';
+import Menus from './pages/menus/menus.jsx';
 import Categories from './pages/categories/Categories.jsx';
 import Products from './pages/products/Products.jsx';
 import Login from './pages/login/Login.jsx';

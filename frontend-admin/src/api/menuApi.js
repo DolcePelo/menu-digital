@@ -50,6 +50,16 @@ const updateMenu = async (id, menu) => {
     }
 }
 
+const updateMenuCustomization = async (id, customization) => {
+    try {
+        const response = await api.put(`/api/menus/${id}/customization`, customization);
+        return response.data;
+    } catch (error) {
+        console.error("Error al actualizar la personalización del menú:", error);
+        throw new Error(error.response?.data?.message || "No se pudo actualizar la personalización del menú.");
+    }
+}
+
 const addCategoryToMenu = async (menuId, categoryId) => {
     try {
         const response = await api.put(`/api/menus/${menuId}/category/${categoryId}`);
@@ -68,4 +78,4 @@ const deleteCategoryFromMenu = async (menuId, categoryId) => {
     }
 }
 
-export { getMenus, getMenuById, saveMenu, deleteMenu, updateMenu, addCategoryToMenu, deleteCategoryFromMenu };
+export { getMenus, getMenuById, saveMenu, deleteMenu, updateMenu, addCategoryToMenu, deleteCategoryFromMenu, updateMenuCustomization };

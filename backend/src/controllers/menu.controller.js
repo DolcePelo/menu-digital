@@ -75,9 +75,21 @@ const updateMenu = async (req, res) => {
 
 const updateMenuCustomization = async (req, res) => {
     const { id } = req.params;
-    const { businessName, logo, banner, style } = req.body;
+    const { businessName, style } = req.body;
+    const logo = req.files?.logo?.[0]?.filename;
+    const banner = req.files?.banner?.[0]?.filename;
+
     try {
-        const response = await menu.updateMenuCustomization(id, { businessName, logo, banner, style });
+        const customizationData = {
+            businessName,
+            style: JSON.parse(style),
+        };
+
+        if (logo) customizationData.logo = `/uploads/${logo}`;
+        if (banner) customizationData.banner = `/uploads/${banner}`;
+
+        const response = await menu.updateMenuCustomization(id, customizationData);
+
         if (!response) {
             return res.status(404).json({ message: "Menú no encontrado" });
         }
@@ -87,6 +99,10 @@ const updateMenuCustomization = async (req, res) => {
             message: "Personalización del menú actualizada con éxito",
             data: response
         });
+        console.log("Logo guardado en:", req.files?.logo?.[0]?.path);
+        console.log("Banner guardado en:", req.files?.banner?.[0]?.path);
+
+
     } catch (error) {
         logger.error("error al actualizar la personalizacion del menu", error);
         res.status(500).json({ message: "Error al actualizar la personalización del menú" });

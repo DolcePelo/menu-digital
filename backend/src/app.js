@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import path from "path";
 import categoryRouter from "./routes/category.routes.js";
 import productRouter from "./routes/product.routes.js";
 import userRouter from "./routes/user.routes.js";
@@ -32,6 +33,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
+app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 app.use(cookieParser(COOKIESECRET));
 app.use(expressWinston.logger({
     winstonInstance: logger,

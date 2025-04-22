@@ -50,15 +50,20 @@ const updateMenu = async (id, menu) => {
     }
 }
 
-const updateMenuCustomization = async (id, customization) => {
+const updateMenuCustomization = async (id, formData) => {
     try {
-        const response = await api.put(`/api/menus/${id}/customization`, customization);
+        const response = await api.put(`/api/menus/${id}/customization`, formData, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        });
         return response.data;
     } catch (error) {
         console.error("Error al actualizar la personalización del menú:", error);
         throw new Error(error.response?.data?.message || "No se pudo actualizar la personalización del menú.");
     }
-}
+};
+
 
 const addCategoryToMenu = async (menuId, categoryId) => {
     try {

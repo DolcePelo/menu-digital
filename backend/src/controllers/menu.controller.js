@@ -82,7 +82,7 @@ const updateMenuCustomization = async (req, res) => {
     try {
         const customizationData = {
             businessName,
-            style: JSON.parse(style),
+            style: typeof style === "string" ? JSON.parse(style) : style,
         };
 
         if (logo) customizationData.logo = `/uploads/${logo}`;

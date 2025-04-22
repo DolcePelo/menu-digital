@@ -33,6 +33,10 @@ const MenuPage = () => {
     const backgroundColor = style?.backgroundColor || "#ffffff";
     const textColor = style?.textColor || "#000000";
 
+    const backendUrl = "http://localhost:3000";
+    const logoUrl = logo ? `${backendUrl}${logo}` : null;
+    const bannerUrl = banner ? `${backendUrl}${banner}` : null;
+
     return (
         <div
             className="min-h-screen p-6"
@@ -41,12 +45,14 @@ const MenuPage = () => {
                 color: textColor
             }}
         >
-            <div className="max-w-6xl mx-auto bg-white bg-opacity-10 rounded-xl p-6 shadow-lg" style={{ color: textColor }}>
-
+            <div
+                className="max-w-6xl mx-auto rounded-xl p-6 shadow-xl ring-1 ring-white/10 backdrop-blur-md"
+                style={{ backgroundColor: `${backgroundColor}cc`, color: textColor }}
+            >
                 {/* LOGO */}
-                {logo && (
+                {logoUrl && (
                     <div className="flex justify-center mb-4">
-                        <img src={logo} alt="Logo del comercio" className="h-24 object-contain" />
+                        <img src={logoUrl} alt="Logo del comercio" className="h-24 object-contain" />
                     </div>
                 )}
 
@@ -56,9 +62,9 @@ const MenuPage = () => {
                 )}
 
                 {/* BANNER */}
-                {banner && (
+                {bannerUrl && (
                     <div className="my-6">
-                        <img src={banner} alt="Banner del comercio" className="w-full h-56 object-cover rounded-lg shadow-md" />
+                        <img src={bannerUrl} alt="Banner del comercio" className="w-full h-56 object-cover rounded-lg shadow-md" />
                     </div>
                 )}
 
@@ -69,21 +75,26 @@ const MenuPage = () => {
                 {/* CATEGORÍAS */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {menu?.categories?.map((category) => (
-                        <div key={category._id} className="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow-md border border-gray-300">
-                            <h3 className="text-xl font-bold mb-4">{category.name}</h3>
+                        <div
+                            key={category._id}
+                            className="bg-white/20 border border-white/30 backdrop-blur-sm p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg"
+                            style={{ color: textColor }}
+                        >
+                            <h3 className="text-xl font-semibold mb-4">{category.name}</h3>
                             {category.products?.length ? (
                                 <ul className="space-y-2">
                                     {category.products.map((product, index) => (
                                         <li
                                             key={`${product._id}-${index}`}
-                                            className="bg-white bg-opacity-20 rounded px-4 py-2"
+                                            className="bg-white/30 rounded px-4 py-2"
+                                            style={{ color: textColor }}
                                         >
                                             {product.name}
                                         </li>
                                     ))}
                                 </ul>
                             ) : (
-                                <p className="italic text-sm text-gray-500">No hay productos en esta categoría</p>
+                                <p className="italic text-sm opacity-70">No hay productos en esta categoría</p>
                             )}
                         </div>
                     ))}

@@ -85,12 +85,14 @@ const MenuPage = () => {
                                 <ul className="space-y-2">
                                     {category.products.map((product, index) => (
                                         <li
-                                            key={`${product._id}-${index}`}
-                                            className="bg-white/30 rounded px-4 py-2"
-                                            style={{ color: textColor }}
-                                        >
-                                            {product.name}
-                                        </li>
+                                        key={`${product._id}-${index}`}
+                                        className="bg-white/30 rounded px-4 py-2 flex justify-between items-center"
+                                        style={{ color: textColor }}
+                                    >
+                                        <span>{product.name}</span>
+                                        <span className="text-sm font-medium opacity-80">${product.price}</span>
+                                    </li>
+                                    
                                     ))}
                                 </ul>
                             ) : (

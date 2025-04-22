@@ -15,24 +15,41 @@ const MenuCustomizer = ({ menuId }) => {
     useEffect(() => {
         const fetchMenuDetails = async () => {
             if (!menuId) return;
+    
             try {
-                const menu = await getMenuById(menuId);
+                const { data: menuData } = await getMenuById(menuId);
+                console.log("Menu cargado:", menuData);
+    
+                // Reset antes de setear, por las dudas
                 setCustomization({
-                    businessName: menu.businessName || "",
-                    logo: menu.logo || "",
-                    banner: menu.banner || "",
+                    businessName: "",
+                    logo: "",
+                    banner: "",
                     style: {
-                        backgroundColor: menu.style?.backgroundColor || "#ffffff",
-                        textColor: menu.style?.textColor || "#000000"
+                        backgroundColor: "#ffffff",
+                        textColor: "#000000"
                     }
                 });
+    
+                setTimeout(() => {
+                    setCustomization({
+                        businessName: menuData.businessName || "",
+                        logo: menuData.logo || "",
+                        banner: menuData.banner || "",
+                        style: {
+                            backgroundColor: menuData.style?.backgroundColor || "#ffffff",
+                            textColor: menuData.style?.textColor || "#000000"
+                        }
+                    });
+                }, 50); // pequeño delay opcional para asegurar render
             } catch (error) {
-                console.error("Error fetching menu details:", error);
+                console.error("Error al traer el menú:", error);
             }
         };
-
+    
         fetchMenuDetails();
     }, [menuId]);
+    
 
 
     const handleChange = (e) => {
@@ -54,6 +71,8 @@ const MenuCustomizer = ({ menuId }) => {
 
     const handleSave = async () => {
         try {
+            console.log("Estado de customization antes de guardar:", customization);
+
             const formData = new FormData();
             formData.append("businessName", customization.businessName);
             formData.append("style", JSON.stringify(customization.style));
@@ -112,7 +131,7 @@ const MenuCustomizer = ({ menuId }) => {
                 <input
                     type="color"
                     name="backgroundColor"
-                    value={customization.backgroundColor}
+                    value={customization.style.backgroundColor}
                     onChange={handleChange}
                 />
             </div>
@@ -121,7 +140,7 @@ const MenuCustomizer = ({ menuId }) => {
                 <input
                     type="color"
                     name="textColor"
-                    value={customization.textColor}
+                    value={customization.style.textColor}
                     onChange={handleChange}
                 />
             </div>

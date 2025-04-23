@@ -99,9 +99,6 @@ const updateMenuCustomization = async (req, res) => {
             message: "Personalización del menú actualizada con éxito",
             data: response
         });
-        console.log("Logo guardado en:", req.files?.logo?.[0]?.path);
-        console.log("Banner guardado en:", req.files?.banner?.[0]?.path);
-
 
     } catch (error) {
         logger.error("error al actualizar la personalizacion del menu", error);

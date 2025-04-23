@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { updateMenuCustomization, getMenuById } from "../../../api/menuApi.js";
+import Swal from 'sweetalert2';
 
 const MenuCustomizer = ({ menuId }) => {
     const [customization, setCustomization] = useState({
@@ -18,8 +19,7 @@ const MenuCustomizer = ({ menuId }) => {
     
             try {
                 const { data: menuData } = await getMenuById(menuId);
-                console.log("Menu cargado:", menuData);
-    
+
                 // Reset antes de setear, por las dudas
                 setCustomization({
                     businessName: "",
@@ -71,8 +71,6 @@ const MenuCustomizer = ({ menuId }) => {
 
     const handleSave = async () => {
         try {
-            console.log("Estado de customization antes de guardar:", customization);
-
             const formData = new FormData();
             formData.append("businessName", customization.businessName);
             formData.append("style", JSON.stringify(customization.style));
@@ -84,7 +82,12 @@ const MenuCustomizer = ({ menuId }) => {
             }
 
             await updateMenuCustomization(menuId, formData);
-            alert("Personalización guardada con éxito.");
+            Swal.fire({
+                title: "Personalización guardada",
+                text: "La personalización del menú se ha guardado correctamente.",
+                icon: "success",
+                confirmButtonText: "OK"
+            })
         } catch (error) {
             console.error("Error al guardar la personalización:", error);
             alert("Ocurrió un error al guardar la personalización.");

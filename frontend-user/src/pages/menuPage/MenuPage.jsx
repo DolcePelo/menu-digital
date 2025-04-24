@@ -46,7 +46,7 @@ const MenuPage = () => {
             }}
         >
             <div
-                className="max-w-6xl mx-auto rounded-xl p-6 shadow-xl ring-1 ring-white/10 backdrop-blur-md"
+                className="max-w-6xl mx-auto rounded-xl p-6 shadow-xl ring-1 ring-white/10 backdrop-blur-md overflow-x-hidden"
                 style={{ backgroundColor: `${backgroundColor}cc`, color: textColor }}
             >
                 {/* LOGO */}

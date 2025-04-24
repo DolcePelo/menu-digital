@@ -27,7 +27,7 @@ const COOKIESECRET = process.env.COOKIESECRET;
 
 //Middleware
 app.use(cors({
-    origin: ["http://localhost:5173", "http://localhost:5174", "https://menu-digital-six.vercel.app", "https://menu-digital-admin.vercel.app/"],
+    origin: ["http://localhost:5173", "http://localhost:5174", "https://menu-digital-six.vercel.app", "https://menu-digital-admin.vercel.app"],
     credentials: true
 }));
 app.use(express.json());

@@ -36,7 +36,7 @@ const Dashboard = ({ setCommercialPremises }) => {
         console.log("URL del menú:", menuUrl);
     };
 
-    const menuUrl = selectedMenu ? `http://localhost:5174/menu/${selectedMenu}` : "";
+    const menuUrl = selectedMenu ? `https://menu-digital-six.vercel.app/menu/${selectedMenu}` : "";
 
     const handleDownloadQR = () => {
         if (qrRef.current) {

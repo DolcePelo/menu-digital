@@ -34,13 +34,12 @@ const MenuPage = () => {
     const textColor = style?.textColor || "#000000";
 
     const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
-    ;
     const logoUrl = logo ? `${backendUrl}${logo}` : null;
     const bannerUrl = banner ? `${backendUrl}${banner}` : null;
 
     return (
         <div
-            className="min-h-screen px-4 py-6 sm:px-6"
+            className="min-h-screen px-4 py-6 sm:px-6 overflow-x-hidden"
             style={{
                 backgroundColor: backgroundColor,
                 color: textColor
@@ -65,9 +64,14 @@ const MenuPage = () => {
                 {/* BANNER */}
                 {bannerUrl && (
                     <div className="my-6">
-                        <img src={bannerUrl} alt="Banner del comercio" className="w-full h-56 object-cover rounded-lg shadow-md" />
+                        <img
+                            src={bannerUrl}
+                            alt="Banner del comercio"
+                            className="w-full h-56 object-cover rounded-lg shadow-md"
+                        />
                     </div>
                 )}
+
 
                 {/* DESCRIPCIÓN DEL MENÚ */}
                 <h2 className="text-2xl font-semibold text-center mb-6">{menu.name}</h2>
@@ -90,10 +94,11 @@ const MenuPage = () => {
                                             className="bg-white/30 rounded px-4 py-2 flex justify-between items-center text-left"
                                             style={{ color: textColor }}
                                         >
-                                            <span className="text-left">{product.name}</span>
-                                            <span className="text-sm font-medium opacity-80 text-right">${product.price}</span>
+                                            <span className="text-left mr-4">{product.name}</span>
+                                            <span className="text-sm font-semibold text-black/60 shadow-sm px-2 py-1 rounded">
+                                                ${product.price}
+                                            </span>
                                         </li>
-
                                     ))}
                                 </ul>
                             ) : (

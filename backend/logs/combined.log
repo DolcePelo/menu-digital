@@ -1,6 +1,0 @@
-[2025-04-23T18:46:57.173Z] [32minfo[39m: GET /api/menus/67bbf2b3b50b8afac1a20e22 200 689ms
-[2025-04-23T18:46:57.351Z] [32minfo[39m: GET /api/menus/67bbf2b3b50b8afac1a20e22 304 156ms
-[2025-04-23T20:38:42.110Z] [32minfo[39m: POST /api/session/login 200 228ms
-[2025-04-23T20:38:42.346Z] [32minfo[39m: GET /api/menus 200 160ms
-[2025-04-23T20:38:42.474Z] [32minfo[39m: GET /api/menus 304 124ms
-[2025-04-23T20:38:45.382Z] [32minfo[39m: GET /api/menus/67bbf2b3b50b8afac1a20e22 304 235ms

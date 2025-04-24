@@ -34,13 +34,13 @@ const MenuPage = () => {
     const textColor = style?.textColor || "#000000";
 
     const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
-;
+    ;
     const logoUrl = logo ? `${backendUrl}${logo}` : null;
     const bannerUrl = banner ? `${backendUrl}${banner}` : null;
 
     return (
         <div
-            className="min-h-screen p-6"
+            className="min-h-screen px-4 py-6 sm:px-6"
             style={{
                 backgroundColor: backgroundColor,
                 color: textColor
@@ -86,14 +86,14 @@ const MenuPage = () => {
                                 <ul className="space-y-2">
                                     {category.products.map((product, index) => (
                                         <li
-                                        key={`${product._id}-${index}`}
-                                        className="bg-white/30 rounded px-4 py-2 flex justify-between items-center"
-                                        style={{ color: textColor }}
-                                    >
-                                        <span>{product.name}</span>
-                                        <span className="text-sm font-medium opacity-80">${product.price}</span>
-                                    </li>
-                                    
+                                            key={`${product._id}-${index}`}
+                                            className="bg-white/30 rounded px-4 py-2 flex justify-between items-center text-left"
+                                            style={{ color: textColor }}
+                                        >
+                                            <span className="text-left">{product.name}</span>
+                                            <span className="text-sm font-medium opacity-80 text-right">${product.price}</span>
+                                        </li>
+
                                     ))}
                                 </ul>
                             ) : (

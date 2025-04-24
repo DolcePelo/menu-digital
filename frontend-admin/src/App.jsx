@@ -8,7 +8,7 @@ import Menus from './pages/menus/menus.jsx';
 import Categories from './pages/categories/Categories.jsx';
 import Products from './pages/products/Products.jsx';
 import Login from './pages/login/login.jsx';
-import Signup from './pages/signup/Signup.jsx';
+import Signup from './pages/signup/signup.jsx';
 import ProtectedRoute from './components/protectedRoute/protectedRoute.jsx';
 
 function App() {

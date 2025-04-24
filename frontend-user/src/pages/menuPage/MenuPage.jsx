@@ -33,7 +33,8 @@ const MenuPage = () => {
     const backgroundColor = style?.backgroundColor || "#ffffff";
     const textColor = style?.textColor || "#000000";
 
-    const backendUrl = "http://localhost:3000";
+    const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+;
     const logoUrl = logo ? `${backendUrl}${logo}` : null;
     const bannerUrl = banner ? `${backendUrl}${banner}` : null;
 
